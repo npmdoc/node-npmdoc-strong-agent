@@ -1,0 +1,4734 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://strongloop.com"
+
+    >strong-agent (v2.1.2)</a>
+</h1>
+<h4>StrongOps Application Performance Monitoring Agent</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent">module strong-agent</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">strong-agent.</span>started</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent">
+            function <span class="apidocSignatureSpan">strong-agent.</span>Agent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.require">
+            function <span class="apidocSignatureSpan">strong-agent.</span>require
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.timer">
+            function <span class="apidocSignatureSpan">strong-agent.</span>timer
+            <span class="apidocSignatureSpan">(scope, command)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">strong-agent.</span>_eventsCount</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>Agent.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>_events</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>addon</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>agent</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>counts</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>cpuinfo</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>custom_stats</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>domain</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>dyninst</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>dyninst_metrics</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>graph_helper</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>info</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>internal</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>json</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>loop</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>metrics</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>module_detector</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>proc</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>proxy</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>require.extensions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>samples</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>strongTracerInstrument</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.</span>timer.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.Agent">module strong-agent.Agent</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.Agent">
+            function <span class="apidocSignatureSpan">strong-agent.</span>Agent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.super_">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.Agent.prototype">module strong-agent.Agent.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.addLicense">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>addLicense
+            <span class="apidocSignatureSpan">(lic)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.configure">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>configure
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.debug">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>debug
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.dyninst">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>dyninst
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.error">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>error
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.info">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>info
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.licensed">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>licensed
+            <span class="apidocSignatureSpan">(feature)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.metric">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>metric
+            <span class="apidocSignatureSpan">(name, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.notice">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>notice
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.poll">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>poll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.prepareClusterControls">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>prepareClusterControls
+            <span class="apidocSignatureSpan">(control)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.preparePoll">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>preparePoll
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.prepareProbes">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>prepareProbes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.prepareProfilers">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>prepareProfilers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.profile">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>profile
+            <span class="apidocSignatureSpan">(userKey, appName, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.start">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.stop">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>stop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.strongTraceLink">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>strongTraceLink
+            <span class="apidocSignatureSpan">(dbId, query, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.transactionLink">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>transactionLink
+            <span class="apidocSignatureSpan">(linkName, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.use">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>use
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.Agent.prototype.warn">
+            function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>warn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.addon">module strong-agent.addon</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.cputime">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>cputime
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.lrtime">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>lrtime
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.runInDebugContext">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>runInDebugContext
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.startCounters">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>startCounters
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.startCpuProfiling">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>startCpuProfiling
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.startGarbageCollectorStatistics">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>startGarbageCollectorStatistics
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.startHeapDiff">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>startHeapDiff
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.stopCounters">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>stopCounters
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.stopCpuProfiling">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>stopCpuProfiling
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.stopCpuProfilingAndSerialize">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>stopCpuProfilingAndSerialize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.stopGarbageCollectorStatistics">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>stopGarbageCollectorStatistics
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.stopHeapDiff">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>stopHeapDiff
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.addon.watchdogActivationCount">
+            function <span class="apidocSignatureSpan">strong-agent.addon.</span>watchdogActivationCount
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">strong-agent.addon.</span>kCountersCallback</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">strong-agent.addon.</span>kCountersObject</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">strong-agent.addon.</span>kGarbageCollectorStatisticsCallback</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.addon.</span>1</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.addon.</span>counters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.addon.</span>eventLoopStatistics</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.agent">module strong-agent.agent</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">strong-agent.agent.</span>started</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.agent.Agent">
+            function <span class="apidocSignatureSpan">strong-agent.agent.</span>Agent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.agent.require">
+            function <span class="apidocSignatureSpan">strong-agent.agent.</span>require
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">strong-agent.agent.</span>_eventsCount</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.agent.</span>_events</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.agent.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.agent.</span>cpuinfo</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.agent.</span>domain</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.agent.</span>internal</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.agent.</span>metrics</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.agent.</span>strongTracerInstrument</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.config">module strong-agent.config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.config.configure">
+            function <span class="apidocSignatureSpan">strong-agent.config.</span>configure
+            <span class="apidocSignatureSpan">(userKey, appName, options, env)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">strong-agent.config.</span>baseInterval</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.config.</span>license</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.config.</span>logger</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">strong-agent.config.</span>appName</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">strong-agent.config.</span>hostname</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.counts">module strong-agent.counts</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.counts.poll">
+            function <span class="apidocSignatureSpan">strong-agent.counts.</span>poll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.counts.sample">
+            function <span class="apidocSignatureSpan">strong-agent.counts.</span>sample
+            <span class="apidocSignatureSpan">(code)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.cpuinfo">module strong-agent.cpuinfo</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.cpuinfo.cpuutil">
+            function <span class="apidocSignatureSpan">strong-agent.cpuinfo.</span>cpuutil
+            <span class="apidocSignatureSpan">(onMetric)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.custom_stats">module strong-agent.custom_stats</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.custom_stats.createTimer">
+            function <span class="apidocSignatureSpan">strong-agent.custom_stats.</span>createTimer
+            <span class="apidocSignatureSpan">(stat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.custom_stats.decrement">
+            function <span class="apidocSignatureSpan">strong-agent.custom_stats.</span>decrement
+            <span class="apidocSignatureSpan">(stat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.custom_stats.increment">
+            function <span class="apidocSignatureSpan">strong-agent.custom_stats.</span>increment
+            <span class="apidocSignatureSpan">(stat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.custom_stats.init">
+            function <span class="apidocSignatureSpan">strong-agent.custom_stats.</span>init
+            <span class="apidocSignatureSpan">(agent)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.dyninst">module strong-agent.dyninst</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.dyninst.debug">
+            function <span class="apidocSignatureSpan">strong-agent.dyninst.</span>debug
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.dyninst.driver">
+            function <span class="apidocSignatureSpan">strong-agent.dyninst.</span>driver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.dyninst.patch">
+            function <span class="apidocSignatureSpan">strong-agent.dyninst.</span>patch
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.dyninst.position">
+            function <span class="apidocSignatureSpan">strong-agent.dyninst.</span>position
+            <span class="apidocSignatureSpan">(script, lineno, column)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.dyninst.scripts">
+            function <span class="apidocSignatureSpan">strong-agent.dyninst.</span>scripts
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.dyninst.unpatch">
+            function <span class="apidocSignatureSpan">strong-agent.dyninst.</span>unpatch
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.dyninst_metrics">module strong-agent.dyninst_metrics</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.dyninst_metrics.init">
+            function <span class="apidocSignatureSpan">strong-agent.dyninst_metrics.</span>init
+            <span class="apidocSignatureSpan">(agent, dyninst)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.graph_helper">module strong-agent.graph_helper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.graph_helper.startNode">
+            function <span class="apidocSignatureSpan">strong-agent.graph_helper.</span>startNode
+            <span class="apidocSignatureSpan">(name, q, agent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.graph_helper.updateTimes">
+            function <span class="apidocSignatureSpan">strong-agent.graph_helper.</span>updateTimes
+            <span class="apidocSignatureSpan">(graphNode, time)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.info">module strong-agent.info</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.info.init">
+            function <span class="apidocSignatureSpan">strong-agent.info.</span>init
+            <span class="apidocSignatureSpan">(agent_)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.info.poll">
+            function <span class="apidocSignatureSpan">strong-agent.info.</span>poll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.internal">module strong-agent.internal</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.internal.lrtime">
+            function <span class="apidocSignatureSpan">strong-agent.internal.</span>lrtime
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">strong-agent.internal.</span>_eventsCount</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.internal.</span>_events</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.internal.</span>domain</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.internal.</span>supports</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.json">module strong-agent.json</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.json.JsonDecoder">
+            function <span class="apidocSignatureSpan">strong-agent.json.</span>JsonDecoder
+            <span class="apidocSignatureSpan">(maxlen)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.json.JsonEncoder">
+            function <span class="apidocSignatureSpan">strong-agent.json.</span>JsonEncoder
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.loop">module strong-agent.loop</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.loop.poll">
+            function <span class="apidocSignatureSpan">strong-agent.loop.</span>poll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.metrics">module strong-agent.metrics</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.metrics.add">
+            function <span class="apidocSignatureSpan">strong-agent.metrics.</span>add
+            <span class="apidocSignatureSpan">(name, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.metrics.poll">
+            function <span class="apidocSignatureSpan">strong-agent.metrics.</span>poll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.module_detector">module strong-agent.module_detector</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.module_detector.detectModule">
+            function <span class="apidocSignatureSpan">strong-agent.module_detector.</span>detectModule
+            <span class="apidocSignatureSpan">(modulename, hasRun)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.proc">module strong-agent.proc</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.proc.stat">
+            function <span class="apidocSignatureSpan">strong-agent.proc.</span>stat
+            <span class="apidocSignatureSpan">(pid, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.proc.usage">
+            function <span class="apidocSignatureSpan">strong-agent.proc.</span>usage
+            <span class="apidocSignatureSpan">(pid, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.proxy">module strong-agent.proxy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.proxy.after">
+            function <span class="apidocSignatureSpan">strong-agent.proxy.</span>after
+            <span class="apidocSignatureSpan">(object, method, hook)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.proxy.around">
+            function <span class="apidocSignatureSpan">strong-agent.proxy.</span>around
+            <span class="apidocSignatureSpan">(object, method, before, after)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.proxy.before">
+            function <span class="apidocSignatureSpan">strong-agent.proxy.</span>before
+            <span class="apidocSignatureSpan">(object, method, hook)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.proxy.callback">
+            function <span class="apidocSignatureSpan">strong-agent.proxy.</span>callback
+            <span class="apidocSignatureSpan">(args, index, before, after)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.proxy.getter">
+            function <span class="apidocSignatureSpan">strong-agent.proxy.</span>getter
+            <span class="apidocSignatureSpan">(object, method, hook)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.proxy.init">
+            function <span class="apidocSignatureSpan">strong-agent.proxy.</span>init
+            <span class="apidocSignatureSpan">(agent_)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.proxy.install">
+            function <span class="apidocSignatureSpan">strong-agent.proxy.</span>install
+            <span class="apidocSignatureSpan">(object, method, des, proxy)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.proxy.oncall">
+            function <span class="apidocSignatureSpan">strong-agent.proxy.</span>oncall
+            <span class="apidocSignatureSpan">(target, before, after)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.proxy.wrap">
+            function <span class="apidocSignatureSpan">strong-agent.proxy.</span>wrap
+            <span class="apidocSignatureSpan">(target, forward)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.require">module strong-agent.require</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.require.require">
+            function <span class="apidocSignatureSpan">strong-agent.</span>require
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.require.resolve">
+            function <span class="apidocSignatureSpan">strong-agent.require.</span>resolve
+            <span class="apidocSignatureSpan">(request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.require.</span>cache</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.require.</span>extensions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">strong-agent.require.</span>main</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.require.extensions">module strong-agent.require.extensions</a><ol>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.samples">module strong-agent.samples</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.samples.timer">
+            function <span class="apidocSignatureSpan">strong-agent.samples.</span>timer
+            <span class="apidocSignatureSpan">(scope, command)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.timer">module strong-agent.timer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.timer.timer">
+            function <span class="apidocSignatureSpan">strong-agent.</span>timer
+            <span class="apidocSignatureSpan">(scope, command)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.strong-agent.timer.prototype">module strong-agent.timer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.timer.prototype.end">
+            function <span class="apidocSignatureSpan">strong-agent.timer.prototype.</span>end
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.strong-agent.timer.prototype.start">
+            function <span class="apidocSignatureSpan">strong-agent.timer.prototype.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent" id="apidoc.module.strong-agent">module strong-agent</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent" id="apidoc.element.strong-agent.Agent">
+        function <span class="apidocSignatureSpan">strong-agent.</span>Agent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Agent() {
+  events.EventEmitter.call(this);
+  this.started = false;
+  // Setup default config for apps that just call .use()
+  this.configure();
+  this.cpuinfo = require(&#x27;./cpuinfo&#x27;);
+  this.internal = new events.EventEmitter;
+  this.internal.supports = {
+    watchdog: !!(addon &#x26;&#x26; addon.watchdogActivationCount),
+  };
+  this.metrics = new Metrics(this);
+  if (addon &#x26;&#x26; addon.lrtime) {
+    // Linux-only CLOCK_MONOTONIC_COARSE time function.  Returns the
+    // seconds and nanoseconds in an array, like process.hrtime() does,
+    // but the precision will usually be no better than one millisecond.
+    //
+    // The coarse clock is normally at least two times faster to query
+    // and may be 10-100x faster when the system clock is virtualized
+    // and has to be emulated by the host operating system.
+    //
+    // CLOCK_MONOTONIC_COARSE was added in 2.6.32.  When the coarse clock
+    // is unavailable or unsuitable, CLOCK_MONOTONIC is used instead.
+    this.internal.lrtime = addon.lrtime;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.require" id="apidoc.element.strong-agent.require">
+        function <span class="apidocSignatureSpan">strong-agent.</span>require
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function require(path) {
+  try {
+    exports.requireDepth += 1;
+    return self.require(path);
+  } finally {
+    exports.requireDepth -= 1;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// (i.e. referenced) variables from enclosing scopes.  Variables from outer
+// scopes that are not referenced in the original function are not visible
+// to instrumentation; trying to inject code that references them will fail.
+var instrumentation = (function() {
+(function(agent, req, res) {
+  var socket = global.__DYNINST_SOCKET;
+  if (socket == null) {
+    socket = agent.<span class="apidocCodeKeywordSpan">require</span>(&#x27;dgram&#x27;).createSocket(&#x27;udp4&#x27;);
+    socket.unref();
+    Object.defineProperty(global, &#x27;__DYNINST_SOCKET&#x27;, { value: socket });
+  }
+  /* Keep references to the metrics we want to capture, they may have changed
+   * or gone away by the time we send off the datagram. */
+  var host = req.socket.remoteAddress;
+  var port = req.socket.remotePort;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.timer" id="apidoc.element.strong-agent.timer">
+        function <span class="apidocSignatureSpan">strong-agent.</span>timer
+        <span class="apidocSignatureSpan">(scope, command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Timer(scope, command) {
+  this.scope = scope;
+  this.command = command;
+  this._start = undefined;
+  this.ms = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.Agent" id="apidoc.module.strong-agent.Agent">module strong-agent.Agent</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.Agent" id="apidoc.element.strong-agent.Agent.Agent">
+        function <span class="apidocSignatureSpan">strong-agent.</span>Agent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Agent() {
+  events.EventEmitter.call(this);
+  this.started = false;
+  // Setup default config for apps that just call .use()
+  this.configure();
+  this.cpuinfo = require(&#x27;./cpuinfo&#x27;);
+  this.internal = new events.EventEmitter;
+  this.internal.supports = {
+    watchdog: !!(addon &#x26;&#x26; addon.watchdogActivationCount),
+  };
+  this.metrics = new Metrics(this);
+  if (addon &#x26;&#x26; addon.lrtime) {
+    // Linux-only CLOCK_MONOTONIC_COARSE time function.  Returns the
+    // seconds and nanoseconds in an array, like process.hrtime() does,
+    // but the precision will usually be no better than one millisecond.
+    //
+    // The coarse clock is normally at least two times faster to query
+    // and may be 10-100x faster when the system clock is virtualized
+    // and has to be emulated by the host operating system.
+    //
+    // CLOCK_MONOTONIC_COARSE was added in 2.6.32.  When the coarse clock
+    // is unavailable or unsuitable, CLOCK_MONOTONIC is used instead.
+    this.internal.lrtime = addon.lrtime;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.super_" id="apidoc.element.strong-agent.Agent.super_">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.Agent.prototype" id="apidoc.module.strong-agent.Agent.prototype">module strong-agent.Agent.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.addLicense" id="apidoc.element.strong-agent.Agent.prototype.addLicense">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>addLicense
+        <span class="apidocSignatureSpan">(lic)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addLicense = function (lic) {
+  var license = loadLicense(lic);
+  if (license.covers(&#x27;agent&#x27;)) {
+    // TODO: filter duplicates on license.key
+    this.licenses = this.licenses || [];
+    this.licenses.push(license);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.configure" id="apidoc.element.strong-agent.Agent.prototype.configure">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>configure
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (options) {
+  options = options || {};
+  var apiKey = options.apiKey;
+  var appName = options.appName;
+  this.config = defaults.configure(apiKey, appName, options, process.env);
+  this.config.license.forEach(this.addLicense, this);
+  this.strongTracerInstrument =
+      options.strongTracer ? options.strongTracer.tracer : null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var agentPackage = require(&#x27;../package.json&#x27;);
+
+function Agent() {
+events.EventEmitter.call(this);
+this.started = false;
+// Setup default config for apps that just call .use()
+this.<span class="apidocCodeKeywordSpan">configure</span>();
+this.cpuinfo = require(&#x27;./cpuinfo&#x27;);
+this.internal = new events.EventEmitter;
+this.internal.supports = {
+  watchdog: !!(addon &#x26;&#x26; addon.watchdogActivationCount),
+};
+this.metrics = new Metrics(this);
+if (addon &#x26;&#x26; addon.lrtime) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.debug" id="apidoc.element.strong-agent.Agent.prototype.debug">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>debug
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function debug() {
+  // disabled?
+  if (!debug.enabled) return;
+
+  var self = debug;
+
+  // set `diff` timestamp
+  var curr = +new Date();
+  var ms = curr - (prevTime || curr);
+  self.diff = ms;
+  self.prev = prevTime;
+  self.curr = curr;
+  prevTime = curr;
+
+  // turn the `arguments` into a proper Array
+  var args = new Array(arguments.length);
+  for (var i = 0; i &#x3c; args.length; i++) {
+    args[i] = arguments[i];
+  }
+
+  args[0] = exports.coerce(args[0]);
+
+  if (&#x27;string&#x27; !== typeof args[0]) {
+    // anything else let&#x27;s inspect with %O
+    args.unshift(&#x27;%O&#x27;);
+  }
+
+  // apply any `formatters` transformations
+  var index = 0;
+  args[0] = args[0].replace(/%([a-zA-Z%])/g, function(match, format) {
+    // if we encounter an escaped % then don&#x27;t increase the array index
+    if (match === &#x27;%%&#x27;) return match;
+    index++;
+    var formatter = exports.formatters[format];
+    if (&#x27;function&#x27; === typeof formatter) {
+      var val = args[index];
+      match = formatter.call(self, val);
+
+      // now we need to remove `args[index]` since it&#x27;s inlined in the `format`
+      args.splice(index, 1);
+      index--;
+    }
+    return match;
+  });
+
+  // apply env-specific formatting (colors, etc.)
+  exports.formatArgs.call(self, args);
+
+  var logFn = debug.log || exports.log || console.log.bind(console);
+  logFn.apply(self, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // line is 1-base (first line is line 1), patch is literal code to insert
+  // at beginning of line
+  function patchLine(name, line, patch) {
+var script = findScript(name);
+
+if (!script) throw Error(&#x27;noscript&#x27;);
+
+var position = dyninst.<span class="apidocCodeKeywordSpan">debug</span>().findScriptSourcePosition(script, line - 1);
+
+if (position == null) throw Error(&#x27;noline&#x27;);
+
+debug(&#x27;patch script %s line %d pos %d: %j&#x27;, script.name, line, position,
+      patch);
+var changes = [position, patch];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.dyninst" id="apidoc.element.strong-agent.Agent.prototype.dyninst">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>dyninst
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dyninst = function (stream) {
+  var decoder = stream.pipe(json.JsonDecoder());
+  decoder.on(&#x27;data&#x27;, ondata);
+  var encoder = json.JsonEncoder();
+  encoder.pipe(stream);
+  function ondata(cmd) { dyninst.driver().submit(cmd, onresult); }
+  function onresult(err, result) {
+    if (err) {
+      result = {error: err.message, stack: err.stack};
+    }
+    if (result) {
+      encoder.write(result);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.error" id="apidoc.element.strong-agent.Agent.prototype.error">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>error
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (e) {
+  if (e) {
+    // Note that `e` is not necessarily an Error, thus the check for .stack
+    this.config.logger.error(&#x27;strong-agent error:&#x27;, e.stack || e);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.config.logger.log(&#x27;strong-agent&#x27;, util.format.apply(util, arguments));
+}
+};
+
+Agent.prototype.error = function(e) {
+if (e) {
+  // Note that `e` is not necessarily an Error, thus the check for .stack
+  this.config.logger.<span class="apidocCodeKeywordSpan">error</span>(&#x27;strong-agent error:&#x27;, e.stack || e);
+}
+};
+
+// Returns `this` on success or undefined on error for parity with .profile().
+Agent.prototype.use = function(callback) {
+if (!this.licensed(&#x27;metrics&#x27;)) {
+  this.notice([
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.info" id="apidoc.element.strong-agent.Agent.prototype.info">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>info
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function () {
+  this.config.logger.info(&#x27;strong-agent[%d]&#x27;, process.pid,
+                          util.format.apply(util, arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.prepareProbes();
+  this.prepareProfilers();
+  this.prepareClusterControls();
+  this.preparePoll(config);
+
+  this.started = true;
+
+  this.<span class="apidocCodeKeywordSpan">info</span>(&#x27;started profiling agent&#x27;);
+};
+
+Agent.prototype.stop = function() {
+  this.started = false;
+};
+
+Agent.prototype.prepareProbes = function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.licensed" id="apidoc.element.strong-agent.Agent.prototype.licensed">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>licensed
+        <span class="apidocSignatureSpan">(feature)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">licensed = function (feature) {
+  var now = new Date();
+  var licensed = this.licenses &#x26;&#x26; this.licenses.some(function(lic) {
+    return lic.covers(&#x27;agent&#x27;, feature, now);
+  });
+  debug(&#x27;agent feature %j licensed? %j licenses %j&#x27;,
+        feature, licensed, this.licenses);
+  return licensed;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // Note that `e` is not necessarily an Error, thus the check for .stack
+  this.config.logger.error(&#x27;strong-agent error:&#x27;, e.stack || e);
+}
+};
+
+// Returns `this` on success or undefined on error for parity with .profile().
+Agent.prototype.use = function(callback) {
+if (!this.<span class="apidocCodeKeywordSpan">licensed</span>(&#x27;metrics&#x27;)) {
+  this.notice([
+    (this.config.key
+         ? &#x27;agent metrics license not found, local reporting disabled.&#x27;
+         : &#x27;not profiling, agent metrics requires a valid license.&#x27;),
+    &#x27;Please contact sales@strongloop.com for assistance.&#x27;,
+  ].join(&#x27;\n&#x27;));
+  return;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.metric" id="apidoc.element.strong-agent.Agent.prototype.metric">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>metric
+        <span class="apidocSignatureSpan">(name, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">metric = function (name, value) {
+  if (!this.started) return;
+  metrics.add(name, value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+addon[addon.kGarbageCollectorStatisticsCallback] = function(samples) {
+  for (var i = 0, n = samples.length; i &#x3c; n; i += 1) {
+    var len = gcstats.push(samples[i]);
+    var total = gcstats.reduce(function(a, b) { return a + b });
+    var baseline = total / len / 1e6;
+    agent.<span class="apidocCodeKeywordSpan">metric</span>(&#x27;GC Full. V8 heap used&#x27;, baseline);
+    collectHeap(baseline);
+    if (len &#x3e; 10) {
+      gcstats.shift();  // Sliding window.
+    }
+  }
+};
+addon.startGarbageCollectorStatistics();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.notice" id="apidoc.element.strong-agent.Agent.prototype.notice">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>notice
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notice = function () {
+  if (!this.quiet) {
+    this.config.logger.log(&#x27;strong-agent&#x27;, util.format.apply(util, arguments));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (!config.key || !config.appName) {
+  if (!config.key) return;
+  this.warn(
+      &#x27;Application name not found, StrongOps dashboard reporting disabled.&#x27;);
+  return;
+}
+
+this.<span class="apidocCodeKeywordSpan">notice</span>(&#x27;dashboard is at https://strongops.strongloop.com&#x27;);
+
+var loopbackPath = &#x27;loopback&#x27;;
+var loopbackVersion = moduleDetector.detectModule(loopbackPath);
+var version = agentPackage.version;
+
+if (!addon) {
+  version += &#x27; (no-addon)&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.poll" id="apidoc.element.strong-agent.Agent.prototype.poll">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>poll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">poll = function () {
+  var data;
+
+  this.emit(&#x27;poll::start&#x27;);
+
+  if (data = counts.poll()) {
+    this.internal.emit(&#x27;counts&#x27;, data);
+  }
+
+  if (data = loop.poll()) {
+    this.internal.emit(&#x27;loop&#x27;, data);
+  }
+
+  if (data = memProf.poll()) {
+    this.internal.emit(&#x27;instances&#x27;, data);
+  }
+
+  if (data = topFunctions.poll()) {
+    this.internal.emit(&#x27;topCalls&#x27;, data);
+  }
+
+  if (data = tiers.poll()) {
+    this.internal.emit(&#x27;tiers&#x27;, data);
+  }
+
+  info.poll();  // Returns nothing, recorded as CPU/heap/connection metrics.
+
+  if (data = metrics.poll()) {
+    this.internal.emit(&#x27;metrics&#x27;, data);
+  }
+
+  if (addon &#x26;&#x26; addon.watchdogActivationCount) {
+    this.internal.emit(&#x27;watchdogActivationCount&#x27;,
+                       addon.watchdogActivationCount());  // Resets the counter.
+  }
+
+  this.emit(&#x27;poll::stop&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Agent.prototype.poll = function() {
+var data;
+
+this.emit(&#x27;poll::start&#x27;);
+
+if (data = counts.<span class="apidocCodeKeywordSpan">poll</span>()) {
+  this.internal.emit(&#x27;counts&#x27;, data);
+}
+
+if (data = loop.poll()) {
+  this.internal.emit(&#x27;loop&#x27;, data);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.prepareClusterControls" id="apidoc.element.strong-agent.Agent.prototype.prepareClusterControls">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>prepareClusterControls
+        <span class="apidocSignatureSpan">(control)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareClusterControls = function (control) {
+  var self = this;
+
+  if (self._strongClusterControl) {
+    // Ignore multiple initialization
+    return;
+  }
+
+  var clusterInfo = {enabled: false};
+
+  if (control) {
+    var cluster = require(&#x27;cluster&#x27;);
+    var version = control.VERSION;
+    if (version != null &#x26;&#x26; semver.gte(version, &#x27;0.2.0&#x27;)) {
+      self._strongClusterControl = control;
+
+      clusterInfo.enabled = !!control._running;
+      clusterInfo.isMaster = cluster.isMaster;
+      clusterInfo.isWorker = cluster.isWorker;
+
+      if (cluster.isMaster) {
+        this.notice(&#x27;strong-agent using strong-cluster-control v%s&#x27;, version);
+
+        // Repeating loop is so we don&#x27;t lose sync on disconnect, should be a
+        // better way.
+        setInterval(updateClusterStatus, 5000).unref();
+
+        // On any state change which effects status, update it (for faster
+        // response on these infrequent events, we don&#x27;t want to wait 5 seconds
+        // to know a worker has died).
+        cluster.on(&#x27;fork&#x27;, updateClusterStatus);
+        cluster.on(&#x27;exit&#x27;, updateClusterStatus);
+        cluster.on(&#x27;disconnect&#x27;, updateClusterStatus);
+        control.on(&#x27;setSize&#x27;, updateClusterStatus);
+        control.on(&#x27;resize&#x27;, updateClusterStatus);
+        control.on(&#x27;restart&#x27;, updateClusterStatus);
+        control.on(&#x27;startRestart&#x27;, updateClusterStatus);
+        control.on(&#x27;start&#x27;, updateClusterStatus);
+        control.on(&#x27;stop&#x27;, updateClusterStatus);
+
+        self.internal.on(&#x27;cluster:resize&#x27;, resizeCluster);
+        self.internal.on(&#x27;cluster:restart-all&#x27;, restartCluster);
+        self.internal.on(&#x27;cluster:terminate&#x27;, terminateWorker);
+        self.internal.on(&#x27;cluster:shutdown&#x27;, shutdownWorker);
+      }
+    } else {
+      this.notice(&#x27;strong-agent cannot use strong-cluster-control %s,&#x27;,
+                  &#x27;please update to &#x3e;= 0.2.0&#x27;);
+    }
+  }
+
+  // XXX(sam) It would be possible to display state of a cluster master (workers
+  // and change in worker status) even if control wasn&#x27;t running.
+  sendClusterStatus();
+
+  return;
+
+  // XXX(sam) I think all the (!control || !clusterInfo.isMaster) guards below
+  // are unnecessary (though harmless).
+  function updateClusterStatus() {
+    if (!control || !clusterInfo.isMaster) {
+      return;
+    }
+    var status = control.status();
+    clusterInfo.setSize = control.options.size;
+    clusterInfo.size = status.workers.length;
+    clusterInfo.workers = status.workers;
+    clusterInfo.restarting = control._restartIds;
+    clusterInfo.cpus = control.CPUS;
+    clusterInfo.enabled = !!control._running;
+    sendClusterStatus();
+  }
+
+  function sendClusterStatus() {
+    self.internal.emit(&#x27;cluster:status&#x27;, clusterInfo);
+  }
+
+  function resizeCluster(size) {
+    if (!control || !clusterInfo.isMaster) return;
+    control.setSize(size);
+  }
+
+  function restartCluster() {
+    if (!control || !clusterInfo.isMaster) return;
+    control.restart();
+  }
+
+  function shutdownWorker(id) {
+    if (!control || !clusterInfo.isMaster) return;
+    control.shutdown(id);
+  }
+
+  function terminateWorker(id) {
+    if (!control || !clusterInfo.isMaster) return;
+    control.terminate(id);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  proxy.init(this);
+  cpuProf.init(this);
+  info.init(this);
+  this.dyninst.metrics = dyninstMetrics.init(this, dyninst);
+
+  this.prepareProbes();
+  this.prepareProfilers();
+  this.<span class="apidocCodeKeywordSpan">prepareClusterControls</span>();
+  this.preparePoll(config);
+
+  this.started = true;
+
+  this.info(&#x27;started profiling agent&#x27;);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.preparePoll" id="apidoc.element.strong-agent.Agent.prototype.preparePoll">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>preparePoll
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">preparePoll = function (config) {
+  setInterval(this.poll.bind(this), config.baseInterval).unref();
+  // Make &#x27;topCalls&#x27; events available to strong-supervisor.  This is a
+  // semi-internal API; it&#x27;s intended for SL tooling, not general use.
+  this.internal.on(&#x27;topCalls&#x27;, this.emit.bind(this, &#x27;topCalls&#x27;));
+
+  // Forward API usage metrics to strong-supervisor.
+  // This is a semi-internal API intended for SL tooling, not general use
+  this.internal.on(
+    &#x27;express:usage-record&#x27;,
+    this.emit.bind(this, &#x27;express:usage-record&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  cpuProf.init(this);
+  info.init(this);
+  this.dyninst.metrics = dyninstMetrics.init(this, dyninst);
+
+  this.prepareProbes();
+  this.prepareProfilers();
+  this.prepareClusterControls();
+  this.<span class="apidocCodeKeywordSpan">preparePoll</span>(config);
+
+  this.started = true;
+
+  this.info(&#x27;started profiling agent&#x27;);
+};
+
+Agent.prototype.stop = function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.prepareProbes" id="apidoc.element.strong-agent.Agent.prototype.prepareProbes">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>prepareProbes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareProbes = function () {
+  var probes = {};
+  var probe_files = fs.readdirSync(__dirname + &#x27;/probes&#x27;);
+
+  probe_files.forEach(function(file) {
+    var m = file.match(/^(.*)+\.js$/);
+    if (m &#x26;&#x26; m.length == 2) probes[m[1]] = true;
+  });
+
+  var original_require = module.__proto__.require;
+  module.__proto__.require = function(name) {
+    var target_module = original_require.apply(this, arguments);
+
+    // loopback-boot loads modules using full path, e.g.
+    // &#x27;/path/to/app/node_modules/strong-express-metrics&#x27;
+    var pathMatch = name.match(/[\/\\]node_modules[\/\\]([^\\\/]+)$/);
+    if (pathMatch) name = pathMatch[1];
+
+    if (target_module &#x26;&#x26; !target_module.__required__ &#x26;&#x26; probes[name]) {
+      debug(&#x27;instrumenting &#x22;%s&#x22; module with probe&#x27;, name);
+      target_module.__required__ = true;
+      target_module = require(&#x27;./probes/&#x27; + name)(target_module);
+    }
+
+    return target_module;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+assert(config.baseInterval, &#x27;config is missing defaults&#x27;);
+proxy.init(this);
+cpuProf.init(this);
+info.init(this);
+this.dyninst.metrics = dyninstMetrics.init(this, dyninst);
+
+this.<span class="apidocCodeKeywordSpan">prepareProbes</span>();
+this.prepareProfilers();
+this.prepareClusterControls();
+this.preparePoll(config);
+
+this.started = true;
+
+this.info(&#x27;started profiling agent&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.prepareProfilers" id="apidoc.element.strong-agent.Agent.prototype.prepareProfilers">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>prepareProfilers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareProfilers = function () {
+  var self = this;
+  memProf.init(this);
+
+  // Allow memory profiling events to be triggered from server
+  this.internal.on(&#x27;memory:start&#x27;, function() {
+    if (memProf.enabled) {
+      self.warn(&#x27;memory profiler has already been started&#x27;);
+      self.internal.emit(&#x27;profile:start&#x27;, &#x27;memory&#x27;);
+      return;
+    }
+    if (memProf.start()) {
+      self.info(&#x27;starting memory profiler&#x27;);
+      self.internal.emit(&#x27;profile:start&#x27;, &#x27;memory&#x27;);
+    } else {
+      self.warn(&#x27;failed to start memory profiler: no compiled addon&#x27;);
+      self.internal.emit(&#x27;profile:unsupported&#x27;, &#x27;memory&#x27;);
+    }
+  });
+
+  self.internal.on(&#x27;memory:stop&#x27;, function(/*rowid*/) {
+    self.info(&#x27;stopping memory profiler&#x27;);
+    memProf.stop();
+    // XXX(bnoordhuis) Probably obsolete now that the collector is gone
+    // but test/test-profile-start-stop.js tests for it and it&#x27;s possible
+    // strong-pm depends on it in some capacity.  I&#x27;m leaving it in for now.
+    self.internal.emit(&#x27;profile:stop:v2&#x27;, &#x27;memory&#x27;, {});
+  });
+
+  // Allow cpu profiling events to be triggered from server
+  this.internal.on(&#x27;cpu:start&#x27;, function() {
+    if (cpuProf.enabled) {
+      self.warn(&#x27;cpu profiler has already been started&#x27;);
+      self.internal.emit(&#x27;profile:start&#x27;, &#x27;cpu&#x27;);
+      return;
+    }
+    if (cpuProf.start()) {
+      self.info(&#x27;starting cpu profiler&#x27;);
+      self.internal.emit(&#x27;profile:start&#x27;, &#x27;cpu&#x27;);
+    } else {
+      self.warn(&#x27;failed to start cpu profiler: no compiled addon&#x27;);
+      self.internal.emit(&#x27;profile:unsupported&#x27;, &#x27;cpu&#x27;);
+    }
+  });
+
+  self.internal.on(&#x27;cpu:stop&#x27;, function(rowid) {
+    var data = cpuProf.stop();
+    if (data) {
+      self.info(&#x27;strong-agent stopping cpu profiler run %d&#x27;, rowid);
+    } else {
+      self.info(&#x27;strong-agent cpu profiler run %d already stopped&#x27;, rowid);
+    }
+
+    // XXX(bnoordhuis) Probably obsolete now that the collector is gone
+    // but test/test-profile-start-stop.js tests for it and it&#x27;s possible
+    // strong-pm depends on it in some capacity.  I&#x27;m leaving it in for now.
+    self.internal.emit(&#x27;profile:stop:v2&#x27;, &#x27;cpu&#x27;, data || {});
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  assert(config.baseInterval, &#x27;config is missing defaults&#x27;);
+  proxy.init(this);
+  cpuProf.init(this);
+  info.init(this);
+  this.dyninst.metrics = dyninstMetrics.init(this, dyninst);
+
+  this.prepareProbes();
+  this.<span class="apidocCodeKeywordSpan">prepareProfilers</span>();
+  this.prepareClusterControls();
+  this.preparePoll(config);
+
+  this.started = true;
+
+  this.info(&#x27;started profiling agent&#x27;);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.profile" id="apidoc.element.strong-agent.Agent.prototype.profile">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>profile
+        <span class="apidocSignatureSpan">(userKey, appName, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">profile = function (userKey, appName, options) {
+  var self = this;
+
+  if (this.started) {
+    this.warn(&#x27;profiling has already started&#x27;);
+    return;
+  }
+
+  if (options == null) {
+    options = {};
+  }
+  options.apiKey = userKey;
+  options.appName = appName;
+
+  this.quiet = !!options.quiet;
+
+  this.configure(options);
+  var config = this.config;
+
+  if (!config.key || !config.appName) {
+    if (!config.key) return;
+    this.warn(
+        &#x27;Application name not found, StrongOps dashboard reporting disabled.&#x27;);
+    return;
+  }
+
+  this.notice(&#x27;dashboard is at https://strongops.strongloop.com&#x27;);
+
+  var loopbackPath = &#x27;loopback&#x27;;
+  var loopbackVersion = moduleDetector.detectModule(loopbackPath);
+  var version = agentPackage.version;
+
+  if (!addon) {
+    version += &#x27; (no-addon)&#x27;;
+  }
+
+  this.start();
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Agent.prototype.warn = function() {
+  this.config.logger.warn(&#x27;strong-agent[%d]&#x27;, process.pid,
+                          util.format.apply(util, arguments));
+};
+
+// Notice level can be silenced with quiet option to .<span class="apidocCodeKeywordSpan">profile</span>(). supervisor uses
+// this to not log the same startup information for every worker. It should be
+// used for one-time per application notifications.
+Agent.prototype.notice = function() {
+  if (!this.quiet) {
+    this.config.logger.log(&#x27;strong-agent&#x27;, util.format.apply(util, arguments));
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.start" id="apidoc.element.strong-agent.Agent.prototype.start">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function () {
+  var config = this.config;
+
+  if (this.started) return;
+
+  if (!addon) {
+    this.notice(&#x27;native addon missing, install a compiler&#x27;);
+  }
+
+  this.notice(&#x27;v%s profiling app \&#x27;%s\&#x27; pid \&#x27;%d\&#x27;&#x27;, agentPackage.version,
+              config.appName, process.pid);
+
+  assert(config.baseInterval, &#x27;config is missing defaults&#x27;);
+  proxy.init(this);
+  cpuProf.init(this);
+  info.init(this);
+  this.dyninst.metrics = dyninstMetrics.init(this, dyninst);
+
+  this.prepareProbes();
+  this.prepareProfilers();
+  this.prepareClusterControls();
+  this.preparePoll(config);
+
+  this.started = true;
+
+  this.info(&#x27;started profiling agent&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var loopbackVersion = moduleDetector.detectModule(loopbackPath);
+var version = agentPackage.version;
+
+if (!addon) {
+  version += &#x27; (no-addon)&#x27;;
+}
+
+this.<span class="apidocCodeKeywordSpan">start</span>();
+
+return this;
+};
+
+Agent.prototype.configure = function(options) {
+options = options || {};
+var apiKey = options.apiKey;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.stop" id="apidoc.element.strong-agent.Agent.prototype.stop">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>stop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function () {
+  this.started = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// save as `dyninst-metrics-example.js`
+var http = require(&#x27;http&#x27;);
+
+http.createServer(request).listen(process.env.PORT || 3000);
+
+function request(req, res) {
+res.___timer = start(&#x27;get.delay&#x27;);increment(&#x27;get.delay&#x27;);  setTimeout(function() { // line 7
+res.___timer.<span class="apidocCodeKeywordSpan">stop</span>();decrement(&#x27;get.delay&#x27;);   res.end(&#x27;OK\n&#x27;); //
+line 8
+  }, Math.random() &#x3e; 0.1 ? 10 : 100);
+}
+```
+
+Note from the above:
+
+- Patches must by valid when inserted at the beginning of the specified line.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.strongTraceLink" id="apidoc.element.strong-agent.Agent.prototype.strongTraceLink">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>strongTraceLink
+        <span class="apidocSignatureSpan">(dbId, query, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">strongTraceLink = function (dbId, query, args){
+  var linkName = dbId + &#x27; &#x27; + query;
+  var callbackIndex = -1;
+  for(callbackIndex = args.length - 1; callbackIndex &#x3e;= 0; callbackIndex--){
+    if (typeof args[callbackIndex] === &#x27;function&#x27;) {
+      args[callbackIndex] = this.transactionLink(linkName, args[callbackIndex]);
+      break;
+    }
+  }
+  if (callbackIndex === -1) {
+    [].push.call(args, this.transactionLink(linkName, function(){}));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.transactionLink" id="apidoc.element.strong-agent.Agent.prototype.transactionLink">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>transactionLink
+        <span class="apidocSignatureSpan">(linkName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transactionLink = function (linkName, callback) {
+  if (!this.strongTracerInstrument) return callback;
+  debug(&#x22;linkName:&#x22;, linkName);
+  return this.strongTracerInstrument.transactionLink(linkName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+}
+};
+
+Agent.prototype.transactionLink = function(linkName, callback) {
+if (!this.strongTracerInstrument) return callback;
+debug(&#x22;linkName:&#x22;, linkName);
+return this.strongTracerInstrument.<span class="apidocCodeKeywordSpan">transactionLink</span>(linkName, callback);
+};
+
+Agent.prototype.strongTraceLink = function(dbId, query, args){
+var linkName = dbId + &#x27; &#x27; + query;
+var callbackIndex = -1;
+for(callbackIndex = args.length - 1; callbackIndex &#x3e;= 0; callbackIndex--){
+  if (typeof args[callbackIndex] === &#x27;function&#x27;) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.use" id="apidoc.element.strong-agent.Agent.prototype.use">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>use
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">use = function (callback) {
+  if (!this.licensed(&#x27;metrics&#x27;)) {
+    this.notice([
+      (this.config.key
+           ? &#x27;agent metrics license not found, local reporting disabled.&#x27;
+           : &#x27;not profiling, agent metrics requires a valid license.&#x27;),
+      &#x27;Please contact sales@strongloop.com for assistance.&#x27;,
+    ].join(&#x27;\n&#x27;));
+    return;
+  }
+
+  this.start();
+
+  this.internal.on(&#x27;watchdogActivationCount&#x27;, function(count) {
+    callback(&#x27;watchdog.activations.count&#x27;, count);
+  });
+
+  this.internal.on(&#x27;stats&#x27;, function(stat, value, type) {
+    switch (type) {
+      case &#x27;timer&#x27;:
+        return callback(stat + &#x27;.timer&#x27;, value / 1e6 /*ns-&#x3e;ms*/);
+      case &#x27;count&#x27;:
+        return callback(stat + &#x27;.count&#x27;, value);
+      default:
+        return callback(stat, value);
+    }
+  });
+
+  this.internal.on(&#x27;counts&#x27;, function(counts) {
+    var labels = {
+      strongmq_in: &#x27;messages.in.count&#x27;,
+      strongmq_out: &#x27;messages.out.count&#x27;,
+    };
+    for (var key in counts) {
+      var label = labels[key] || (key + &#x27;.count&#x27;);
+      callback(label, counts[key]);
+    }
+  });
+
+  this.internal.on(&#x27;loop&#x27;, function(metrics) {
+    callback(&#x27;loop.count&#x27;, metrics.count | 0);
+    callback(&#x27;loop.minimum&#x27;, metrics.fastest_ms | 0);
+    callback(&#x27;loop.maximum&#x27;, metrics.slowest_ms | 0);
+    callback(&#x27;loop.average&#x27;, fix(metrics.sum_ms / (metrics.count || 1)));
+  });
+
+  this.internal.on(&#x27;instances&#x27;, function(records) {
+    records.forEach(function(e) {
+      callback(&#x27;object.&#x27; + e.type + &#x27;.count&#x27;, e.total | 0);
+      callback(&#x27;object.&#x27; + e.type + &#x27;.size&#x27;, e.size | 0);
+    });
+  });
+
+  this.internal.on(&#x27;tiers&#x27;, function(data) {
+    for (var key in data) {
+      // Keys look like &#x27;mongodb_in&#x27; or &#x27;redis_out&#x27; or just &#x27;http&#x27;
+      // or &#x27;some.host.fqdn_out&#x27; or &#x27;12.34.56.78:8080_out&#x27;
+      var stats = data[key];
+      // if the key contains an &#x27;_&#x27;:
+      //  =&#x3e; the name is &#x27;tiers.&#x27; +  everything BEFORE the _
+      // else:
+      //  =&#x3e; the name is the key as-is.
+      var last = key.indexOf(&#x27;_&#x27;);
+      var name = (last &#x3c; 0 ? key : &#x27;tiers.&#x27; + key.slice(0, last));
+      callback(name + &#x27;.average&#x27;, fix(stats.mean));
+      callback(name + &#x27;.maximum&#x27;, fix(stats.max));
+      callback(name + &#x27;.minimum&#x27;, fix(stats.min));
+    }
+  });
+
+  this.internal.on(&#x27;metrics&#x27;, function(data) {
+    for (var name in data) {
+      metric(name, data[name]);
+    }
+  });
+
+  function metric(name, value) {
+    if (name === &#x27;CPU util&#x27;) {
+      callback(&#x27;cpu.total&#x27;, fix(value));
+      return;
+    }
+
+    if (name === &#x27;CPU util stime&#x27;) {
+      callback(&#x27;cpu.system&#x27;, fix(value));
+      return;
+    }
+
+    if (name === &#x27;CPU util utime&#x27;) {
+      callback(&#x27;cpu.user&#x27;, fix(value));
+      return;
+    }
+
+    if (name === &#x27;Heap Data&#x27;) {
+      // Convert fractional MBs to bytes.
+      callback(&#x27;heap.used&#x27;, value[0] * 0x100000 | 0);
+      callback(&#x27;heap.total&#x27;, value[1] * 0x100000 | 0);
+      return;
+    }
+
+    // FIXME(bnoordhuis) Contrary to what the name suggests, this metric is
+    // actually a mix of scavenges and full GCs.
+    if (name === &#x27;GC Full. V8 heap used&#x27;) {
+      callback(&#x27;gc.heap.used&#x27;, value * 0x100000 | 0);
+      return;
+    }
+
+    if (name === &#x27;Connections&#x27;) {
+      // Index 0 is the number of open connections.
+      // Index 1 is the new connections/sec rate over the last interval.
+      // Index 2 is the number of new connections in the last interval.
+      // Index 3 is the number of new connections in the interval before that.
+      var curr = value[2] | 0;
+      var prev = value[3] | 0;
+      callback(&#x27;http.connection.count&#x27;, curr - prev);
+      return;
+    }
+  }
+
+  // Reduce the fraction of a floating point number to a fixed quantity
+  // so that e.g. 0.6317000000000004 becomes 0.6317.
+  function fix(value) { return +(+value).toFixed(5); }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Metrics License
+
+Can be defined in:
+
+- `STRONGLOOP_LICENSE`: in the environment
+- `agent_license`: in strongloop.json
+
+Using custom metrics (the `.<span class="apidocCodeKeywordSpan">use</span>()` and dynamic object tracking start-stop APIs)
+requires a license, please contact
+[sales@strongloop.com](mailto:sales@strongloop.com).
+
+### Application Name
+
+Can be defined in:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.Agent.prototype.warn" id="apidoc.element.strong-agent.Agent.prototype.warn">
+        function <span class="apidocSignatureSpan">strong-agent.Agent.prototype.</span>warn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function () {
+  this.config.logger.warn(&#x27;strong-agent[%d]&#x27;, process.pid,
+                          util.format.apply(util, arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+util.inherits(Agent, events.EventEmitter);
+
+Agent.prototype.profile = function(userKey, appName, options) {
+var self = this;
+
+if (this.started) {
+  this.<span class="apidocCodeKeywordSpan">warn</span>(&#x27;profiling has already started&#x27;);
+  return;
+}
+
+if (options == null) {
+  options = {};
+}
+options.apiKey = userKey;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.addon" id="apidoc.module.strong-agent.addon">module strong-agent.addon</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.cputime" id="apidoc.element.strong-agent.addon.cputime">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>cputime
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cputime = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.lrtime" id="apidoc.element.strong-agent.addon.lrtime">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>lrtime
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lrtime = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.runInDebugContext" id="apidoc.element.strong-agent.addon.runInDebugContext">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>runInDebugContext
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">runInDebugContext = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+scripts: scripts,
+unpatch: unpatch,
+};
+
+// Get access to Debug, an alternative to `node --expose_debug_as=D`/`D.Debug`.
+function debug() {
+if (debug.instance == null) {
+  // vm.<span class="apidocCodeKeywordSpan">runInDebugContext</span>() is pending joyent/node#8233.
+  var runInDebugContext = require(&#x27;vm&#x27;).runInDebugContext;
+  if (runInDebugContext == null) {
+    var addon = require(&#x27;./addon&#x27;);
+    runInDebugContext = addon &#x26;&#x26; addon.runInDebugContext;
+  }
+  if (runInDebugContext == null) {
+    throw Error(&#x27;add-on not loaded&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.startCounters" id="apidoc.element.strong-agent.addon.startCounters">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>startCounters
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startCounters = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.startCpuProfiling" id="apidoc.element.strong-agent.addon.startCpuProfiling">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>startCpuProfiling
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startCpuProfiling = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### CPU profiling
+
+The agent has a built-in CPU profiler that produces output in a format that can
+be imported into the [Chrome Developer Tools][].  The profiler is available with
+Node.js v0.11 and up.  Reduced functionality is available with Node.js v0.10;
+top-level and bottom-up views work, chart and timeline views don&#x27;t.
+
+* `agent.metrics.<span class="apidocCodeKeywordSpan">startCpuProfiling</span>()` - Start the CPU profiler.  Throws an
+Error when the CPU profiler is unavailable.
+
+Calling this method multiple times is mostly harmless: the first call starts
+the profiler, successive calls are no-ops.
+
+* `agent.metrics.stopCpuProfiling()` - Stop the CPU profiler.  Returns the
+CPU profiler information as a JSON string that can be saved to disk for
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.startGarbageCollectorStatistics" id="apidoc.element.strong-agent.addon.startGarbageCollectorStatistics">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>startGarbageCollectorStatistics
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startGarbageCollectorStatistics = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    agent.metric(&#x27;GC Full. V8 heap used&#x27;, baseline);
+    collectHeap(baseline);
+    if (len &#x3e; 10) {
+      gcstats.shift();  // Sliding window.
+    }
+  }
+};
+addon.<span class="apidocCodeKeywordSpan">startGarbageCollectorStatistics</span>();
+
+timebase = Date.now();
+collect();
+};
+
+exports.poll = function() {
+collect();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.startHeapDiff" id="apidoc.element.strong-agent.addon.startHeapDiff">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>startHeapDiff
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startHeapDiff = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.stopCounters" id="apidoc.element.strong-agent.addon.stopCounters">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>stopCounters
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopCounters = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.stopCpuProfiling" id="apidoc.element.strong-agent.addon.stopCpuProfiling">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>stopCpuProfiling
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopCpuProfiling = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* `agent.metrics.startCpuProfiling()` - Start the CPU profiler.  Throws an
+Error when the CPU profiler is unavailable.
+
+Calling this method multiple times is mostly harmless: the first call starts
+the profiler, successive calls are no-ops.
+
+* `agent.metrics.<span class="apidocCodeKeywordSpan">stopCpuProfiling</span>()` - Stop the CPU profiler.  Returns the
+CPU profiler information as a JSON string that can be saved to disk for
+further inspection.  Throws an Error when the CPU profile is unavailable, or
+has not been started.
+
+The filename must have a `.cpuprofile` suffix in order for the
+[Chrome Developer Tools] importer to recognize it.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.stopCpuProfilingAndSerialize" id="apidoc.element.strong-agent.addon.stopCpuProfilingAndSerialize">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>stopCpuProfilingAndSerialize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopCpuProfilingAndSerialize = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+};
+
+// Return an object with an error property on failure, a (probably quite
+// large) JSON encoded string on success.
+Metrics.prototype.stopCpuProfiling = function() {
+  checkCpuProfSupported(addon);
+  var profile = addon.<span class="apidocCodeKeywordSpan">stopCpuProfilingAndSerialize</span>();
+  if (!profile) {
+    throw Error(&#x27;CPU profiler not started&#x27;);
+  }
+  this.agent.info(&#x27;stopping cpu profiler&#x27;);
+  return profile;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.stopGarbageCollectorStatistics" id="apidoc.element.strong-agent.addon.stopGarbageCollectorStatistics">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>stopGarbageCollectorStatistics
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopGarbageCollectorStatistics = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.stopHeapDiff" id="apidoc.element.strong-agent.addon.stopHeapDiff">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>stopHeapDiff
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopHeapDiff = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.addon.watchdogActivationCount" id="apidoc.element.strong-agent.addon.watchdogActivationCount">
+        function <span class="apidocSignatureSpan">strong-agent.addon.</span>watchdogActivationCount
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">watchdogActivationCount = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (data = metrics.poll()) {
+  this.internal.emit(&#x27;metrics&#x27;, data);
+}
+
+if (addon &#x26;&#x26; addon.watchdogActivationCount) {
+  this.internal.emit(&#x27;watchdogActivationCount&#x27;,
+                     addon.<span class="apidocCodeKeywordSpan">watchdogActivationCount</span>());  // Resets the counter.
+}
+
+this.emit(&#x27;poll::stop&#x27;);
+};
+
+Agent.prototype.preparePoll = function(config) {
+setInterval(this.poll.bind(this), config.baseInterval).unref();
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.agent" id="apidoc.module.strong-agent.agent">module strong-agent.agent</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.agent.Agent" id="apidoc.element.strong-agent.agent.Agent">
+        function <span class="apidocSignatureSpan">strong-agent.agent.</span>Agent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Agent() {
+  events.EventEmitter.call(this);
+  this.started = false;
+  // Setup default config for apps that just call .use()
+  this.configure();
+  this.cpuinfo = require(&#x27;./cpuinfo&#x27;);
+  this.internal = new events.EventEmitter;
+  this.internal.supports = {
+    watchdog: !!(addon &#x26;&#x26; addon.watchdogActivationCount),
+  };
+  this.metrics = new Metrics(this);
+  if (addon &#x26;&#x26; addon.lrtime) {
+    // Linux-only CLOCK_MONOTONIC_COARSE time function.  Returns the
+    // seconds and nanoseconds in an array, like process.hrtime() does,
+    // but the precision will usually be no better than one millisecond.
+    //
+    // The coarse clock is normally at least two times faster to query
+    // and may be 10-100x faster when the system clock is virtualized
+    // and has to be emulated by the host operating system.
+    //
+    // CLOCK_MONOTONIC_COARSE was added in 2.6.32.  When the coarse clock
+    // is unavailable or unsuitable, CLOCK_MONOTONIC is used instead.
+    this.internal.lrtime = addon.lrtime;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.agent.require" id="apidoc.element.strong-agent.agent.require">
+        function <span class="apidocSignatureSpan">strong-agent.agent.</span>require
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function require(path) {
+  try {
+    exports.requireDepth += 1;
+    return self.require(path);
+  } finally {
+    exports.requireDepth -= 1;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// (i.e. referenced) variables from enclosing scopes.  Variables from outer
+// scopes that are not referenced in the original function are not visible
+// to instrumentation; trying to inject code that references them will fail.
+var instrumentation = (function() {
+(function(agent, req, res) {
+  var socket = global.__DYNINST_SOCKET;
+  if (socket == null) {
+    socket = agent.<span class="apidocCodeKeywordSpan">require</span>(&#x27;dgram&#x27;).createSocket(&#x27;udp4&#x27;);
+    socket.unref();
+    Object.defineProperty(global, &#x27;__DYNINST_SOCKET&#x27;, { value: socket });
+  }
+  /* Keep references to the metrics we want to capture, they may have changed
+   * or gone away by the time we send off the datagram. */
+  var host = req.socket.remoteAddress;
+  var port = req.socket.remotePort;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.config" id="apidoc.module.strong-agent.config">module strong-agent.config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.config.configure" id="apidoc.element.strong-agent.config.configure">
+        function <span class="apidocSignatureSpan">strong-agent.config.</span>configure
+        <span class="apidocSignatureSpan">(userKey, appName, options, env)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function configure(userKey, appName, options, env) {
+  var home =
+          process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE,
+      cwd = process.cwd(), nfjson, pkgjson, userjson;
+  var slLicenses;
+
+  // Load configs from strongloop.json and package.json
+  try {
+    nfjson = require(cwd + &#x27;/strongloop.json&#x27;);
+  } catch (e) {
+    nfjson = {};
+  }
+  try {
+    pkgjson = require(cwd + &#x27;/package.json&#x27;);
+  } catch (e) {
+    pkgjson = {};
+  }
+  try {
+    userjson = require(home + &#x27;/strongloop.json&#x27;);
+  } catch (e) {
+    userjson = {};
+  }
+  try {
+    // this is normally done by strongloop-license, but its API
+    // isn&#x27;t quite flexible enough to use in strong-agent yet
+    slLicenses = require(home + &#x27;/.strongloop/licenses.json&#x27;)
+                    .licenses.map(function(l) {
+                      return l.licenseKey;
+                    });
+  } catch (e) {
+    slLicenses = [];
+  }
+
+  var config = {
+    key: userKey || env.STRONGLOOP_KEY || env.SL_KEY ||
+             env.NODEFLY_APPLICATION_KEY || nfjson.userKey ||
+             pkgjson.strongAgentKey ||
+             userjson.key ||  // Bug-for-bug backwards compatibility...
+             userjson.userKey,
+
+    appName: appName || env.STRONGLOOP_APPNAME || env.SL_APP_NAME ||
+                 nfjson.appName || pkgjson.name || userjson.appName,
+
+    license: options.license || env.STRONGLOOP_LICENSE ||
+                 env.STRONG_AGENT_LICENSE || nfjson.agent_license || &#x27;&#x27;,
+
+    logger: options.logger || console,
+  };
+
+  // add licenses found in ~/.strongloop/licenses.json
+  // and make config.license an Array of licenses
+  config.license = (config.license || &#x27;&#x27;).split(&#x27;:&#x27;)
+                      .concat(slLicenses)
+                      .filter(function(l) {
+                        return !!l;
+                      });
+
+  appName = config.appName;
+
+  if (appName instanceof Array) {
+    config.appName = appName.shift();
+    config.hostname = appName.join(&#x27;:&#x27;);
+  } else {
+    config.hostname = os.hostname();
+  }
+
+  var result = extend(extend({}, defaults), config);
+  if (options.interval) {
+    result.baseInterval = options.interval;
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var agentPackage = require(&#x27;../package.json&#x27;);
+
+function Agent() {
+events.EventEmitter.call(this);
+this.started = false;
+// Setup default config for apps that just call .use()
+this.<span class="apidocCodeKeywordSpan">configure</span>();
+this.cpuinfo = require(&#x27;./cpuinfo&#x27;);
+this.internal = new events.EventEmitter;
+this.internal.supports = {
+  watchdog: !!(addon &#x26;&#x26; addon.watchdogActivationCount),
+};
+this.metrics = new Metrics(this);
+if (addon &#x26;&#x26; addon.lrtime) {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.counts" id="apidoc.module.strong-agent.counts">module strong-agent.counts</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.counts.poll" id="apidoc.element.strong-agent.counts.poll">
+        function <span class="apidocSignatureSpan">strong-agent.counts.</span>poll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">poll = function () {
+  var snapshot = counts;
+  counts = null;
+  return snapshot;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Agent.prototype.poll = function() {
+var data;
+
+this.emit(&#x27;poll::start&#x27;);
+
+if (data = counts.<span class="apidocCodeKeywordSpan">poll</span>()) {
+  this.internal.emit(&#x27;counts&#x27;, data);
+}
+
+if (data = loop.poll()) {
+  this.internal.emit(&#x27;loop&#x27;, data);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.counts.sample" id="apidoc.element.strong-agent.counts.sample">
+        function <span class="apidocSignatureSpan">strong-agent.counts.</span>sample
+        <span class="apidocSignatureSpan">(code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sample = function (code) {
+  counts = counts || {};
+  counts[code] = 1 + (counts[code] | 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.cpuinfo" id="apidoc.module.strong-agent.cpuinfo">module strong-agent.cpuinfo</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.cpuinfo.cpuutil" id="apidoc.element.strong-agent.cpuinfo.cpuutil">
+        function <span class="apidocSignatureSpan">strong-agent.cpuinfo.</span>cpuutil
+        <span class="apidocSignatureSpan">(onMetric)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cpuutil = function (onMetric) {
+  var pid = process.pid;
+
+  var metrics = addon &#x26;&#x26; addon.cputime();
+  if (metrics) {
+    var utime = metrics[0];
+    var stime = metrics[1];
+    var ptime = utime + stime;
+    var all = process.uptime();
+    calculateMetrics(utime, stime, ptime, all, onMetric);
+    return;
+  }
+
+  if (platform === &#x27;linux&#x27;) {
+    debug(&#x27;platform is linux&#x27;);
+
+    proc.stat(pid, function(err, stat) {
+      if (err) {
+        return console.error(&#x27;strong-agent failed to get cpu usage:&#x27;, err);
+      }
+      trace(&#x27;stat is\n&#x27;, util.inspect(stat));
+      calculateMetrics(stat.utime, stat.stime, stat.ptime, stat.all, onMetric);
+    });
+
+  } else if (platform === &#x27;sunos&#x27; || platform === &#x27;solaris&#x27;) {
+    debug(&#x27;platform is sunos/solaris&#x27;);
+
+    proc.usage(pid, function(err, usage) {
+      if (err) {
+        return console.error(&#x27;strong-agent failed to get cpu usage:&#x27;, err);
+      }
+      var utime = usage.utime;
+      var stime = usage.stime;
+      var ptime = utime + stime;
+      var all = usage.rtime;
+
+      calculateMetrics(utime, stime, ptime, all, onMetric);
+    });
+
+  } else if (platform === &#x27;darwin&#x27;) {
+    debug(&#x27;platform is darwin&#x27;);
+
+    parsePs(&#x27;utime,time,etime&#x27;, pid, onMetric);
+
+  } else if (platform === &#x27;freebsd&#x27;) {
+    debug(&#x27;platform is freebsd&#x27;);
+
+    parsePs(&#x27;usertime,time,etime&#x27;, pid, onMetric);
+
+  } else if (platform === &#x27;win32&#x27;) {
+    debug(&#x27;platform is win32&#x27;);
+
+    if (last.uptime) {
+      var ps = require(&#x27;child_process&#x27;).exec(&#x27;tasklist /v&#x27;,
+                                             function(err, stdout, stderr) {
+        if (!err) {
+          stdout.split(&#x27;\n&#x27;).forEach(function(item) {
+            var items = item.split(/\s+/);
+            var pid = parseInt(items[1]);
+            if (pid === process.pid) {
+              var times = items[8].split(/[:.]/);
+
+              var hour = parseInt(times[0]);
+              var mins = parseInt(times[1]);
+              var secs = parseInt(times[2]);
+
+              // Total CPU Time of Process in Seconds
+              var active = hour * 3600 + mins * 60 + secs;
+
+              // Total Uptime of Process in Seconds
+              var uptime = process.uptime();
+
+              var uptimeDelta = uptime - last.uptime;
+              var activeDelta = active - last.active;
+
+              last.active = active;
+              last.uptime = uptime;
+
+              var usage = activeDelta / uptimeDelta;
+
+              if (uptimeDelta &#x3e; 0) {
+                if (usage &#x3e; 1) {
+                  // Spike Alert
+                }
+                reportMetrics(usage * 100, usage * 100, 0, onMetric);
+              }
+            }
+          })
+        }
+      });
+      ps.on(&#x27;error&#x27;, function(err) {
+        console.error(&#x27;strong-agent failed to get cpu usage:&#x27;, err);
+      });
+    } else {
+      last.uptime = process.uptime();
+    }
+
+  }  // if win32
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    timebase = now;
+    var metrics = [conns, tps, curr, prev];
+    agent.metric(&#x27;Connections&#x27;, metrics);
+  }
+}
+
+function collect() {
+  cpuinfo.<span class="apidocCodeKeywordSpan">cpuutil</span>(function(percent_proc, percent_user, percent_syst) {
+    agent.metric(&#x27;CPU util&#x27;, percent_proc);
+    agent.metric(&#x27;CPU util stime&#x27;, percent_syst);
+    agent.metric(&#x27;CPU util utime&#x27;, percent_user);
+  });
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.custom_stats" id="apidoc.module.strong-agent.custom_stats">module strong-agent.custom_stats</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.custom_stats.createTimer" id="apidoc.element.strong-agent.custom_stats.createTimer">
+        function <span class="apidocSignatureSpan">strong-agent.custom_stats.</span>createTimer
+        <span class="apidocSignatureSpan">(stat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createTimer(stat) { return new StatTimer(stat); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.custom_stats.decrement" id="apidoc.element.strong-agent.custom_stats.decrement">
+        function <span class="apidocSignatureSpan">strong-agent.custom_stats.</span>decrement
+        <span class="apidocSignatureSpan">(stat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decrement(stat) { count(stat, -1); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.custom_stats.increment" id="apidoc.element.strong-agent.custom_stats.increment">
+        function <span class="apidocSignatureSpan">strong-agent.custom_stats.</span>increment
+        <span class="apidocSignatureSpan">(stat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function increment(stat) { count(stat, +1); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.custom_stats.init" id="apidoc.element.strong-agent.custom_stats.init">
+        function <span class="apidocSignatureSpan">strong-agent.custom_stats.</span>init
+        <span class="apidocSignatureSpan">(agent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function init(agent) {
+  function report(stat, value, type) {
+    agent.internal.emit(&#x27;stats&#x27;, &#x27;custom.&#x27; + stat, value, type);
+  }
+
+  var counters = Object.create(null);
+
+  function count(stat, change) {
+    var latest = counters[stat] = (counters[stat] | 0) + change;
+    report(stat, latest, &#x27;count&#x27;);
+  }
+
+  exports.increment = function increment(stat) { count(stat, +1); };
+
+  exports.decrement = function decrement(stat) { count(stat, -1); };
+
+  function StatTimer(stat) {
+    this._stat = stat;
+    this._start = process.hrtime();
+  };
+
+  StatTimer.prototype.stop = function stop() {
+    if (!this._start) return;  // Timer stopped multiple times!
+
+    // Use full resolution ns internally, it will be converted to ms if reported
+    // to statsd.
+    var diff = process.hrtime(this._start);
+    var delta = diff[0] * 1e9 + diff[1];
+
+    this._start = undefined;
+
+    report(this._stat, delta, &#x27;timer&#x27;);
+  };
+
+  exports.createTimer =
+      function createTimer(stat) { return new StatTimer(stat); };
+
+  return exports;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.notice(&#x27;native addon missing, install a compiler&#x27;);
+}
+
+this.notice(&#x27;v%s profiling app \&#x27;%s\&#x27; pid \&#x27;%d\&#x27;&#x27;, agentPackage.version,
+            config.appName, process.pid);
+
+assert(config.baseInterval, &#x27;config is missing defaults&#x27;);
+proxy.<span class="apidocCodeKeywordSpan">init</span>(this);
+cpuProf.init(this);
+info.init(this);
+this.dyninst.metrics = dyninstMetrics.init(this, dyninst);
+
+this.prepareProbes();
+this.prepareProfilers();
+this.prepareClusterControls();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.dyninst" id="apidoc.module.strong-agent.dyninst">module strong-agent.dyninst</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.dyninst.debug" id="apidoc.element.strong-agent.dyninst.debug">
+        function <span class="apidocSignatureSpan">strong-agent.dyninst.</span>debug
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function debug() {
+  if (debug.instance == null) {
+    // vm.runInDebugContext() is pending joyent/node#8233.
+    var runInDebugContext = require(&#x27;vm&#x27;).runInDebugContext;
+    if (runInDebugContext == null) {
+      var addon = require(&#x27;./addon&#x27;);
+      runInDebugContext = addon &#x26;&#x26; addon.runInDebugContext;
+    }
+    if (runInDebugContext == null) {
+      throw Error(&#x27;add-on not loaded&#x27;);
+    }
+    debug.instance = runInDebugContext(&#x27;Debug&#x27;);
+  }
+  return debug.instance;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // line is 1-base (first line is line 1), patch is literal code to insert
+  // at beginning of line
+  function patchLine(name, line, patch) {
+var script = findScript(name);
+
+if (!script) throw Error(&#x27;noscript&#x27;);
+
+var position = dyninst.<span class="apidocCodeKeywordSpan">debug</span>().findScriptSourcePosition(script, line - 1);
+
+if (position == null) throw Error(&#x27;noline&#x27;);
+
+debug(&#x27;patch script %s line %d pos %d: %j&#x27;, script.name, line, position,
+      patch);
+var changes = [position, patch];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.dyninst.driver" id="apidoc.element.strong-agent.dyninst.driver">
+        function <span class="apidocSignatureSpan">strong-agent.dyninst.</span>driver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function driver() {
+  return driver.singleton || (driver.singleton = new Driver);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Agent.prototype.dyninst = function(stream) {
+var decoder = stream.pipe(json.JsonDecoder());
+decoder.on(&#x27;data&#x27;, ondata);
+var encoder = json.JsonEncoder();
+encoder.pipe(stream);
+function ondata(cmd) { dyninst.<span class="apidocCodeKeywordSpan">driver</span>().submit(cmd, onresult); }
+function onresult(err, result) {
+  if (err) {
+    result = {error: err.message, stack: err.stack};
+  }
+  if (result) {
+    encoder.write(result);
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.dyninst.patch" id="apidoc.element.strong-agent.dyninst.patch">
+        function <span class="apidocSignatureSpan">strong-agent.dyninst.</span>patch
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function patch(f) {
+  if (typeof(f) === &#x27;function&#x27;) {
+    return Functions.patch.apply(this, arguments);
+  } else {
+    return Scripts.patch.apply(this, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (position == null) throw Error(&#x27;noline&#x27;);
+
+  debug(&#x27;patch script %s line %d pos %d: %j&#x27;, script.name, line, position,
+        patch);
+  var changes = [position, patch];
+
+  return dyninst.<span class="apidocCodeKeywordSpan">patch</span>(script, changes);
+}
+
+// patchset looks like:
+//
+//   {
+//     NAME: [ PATCH, ...],
+//     ...
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.dyninst.position" id="apidoc.element.strong-agent.dyninst.position">
+        function <span class="apidocSignatureSpan">strong-agent.dyninst.</span>position
+        <span class="apidocSignatureSpan">(script, lineno, column)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function position(script, lineno, column) {
+  if (lineno &#x3c; 0) throw Error(&#x27;Line number &#x3c; 0&#x27;);
+  if (column &#x3c; 0) throw Error(&#x27;Column number &#x3c; 0&#x27;);
+  lineno -= 1;
+  var pos = column;
+  var eols = script.line_ends;
+  if (lineno &#x3e;= eols.length) return -1;
+  // XXX(bnoordhuis) Do we care if there is a newline between |pos - column|
+  // and |pos|?
+  if (lineno &#x3e;= 0) pos += 1 + eols[lineno];
+  // |pos &#x3c;= script.source.length| is not an off-by-one error; we allow
+  // insertion at the end of the script.
+  return pos &#x3c;= script.source.length ? pos : -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.dyninst.scripts" id="apidoc.element.strong-agent.dyninst.scripts">
+        function <span class="apidocSignatureSpan">strong-agent.dyninst.</span>scripts
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function scripts() {
+  var Debug = debug();
+  try {
+    return Debug.scripts();
+  } catch (e) {
+    if (e !== &#x27;illegal access&#x27;) throw e;
+    // Set a dummy event listener to stop debug functions from throwing
+    // illegal access errors because the debugger hasn&#x27;t been started yet.
+    debug().setListener(function() {});
+    var result = Debug.scripts();
+    debug().setListener(undefined);
+    return result;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Script names are fully qualified when loaded using node require,
+// and short when builtin to node (&#x27;util.js&#x27;).
+//
+// Return is a debug script object if a unique match was found, null
+// otherwise.
+function findScript(name) {
+  var re = RegExp(name);
+  var scripts = dyninst.<span class="apidocCodeKeywordSpan">scripts</span>().filter(function(script) {
+    return re.test(script.name);
+  });
+  // Mirrors what V8&#x27;s Debug.findScript(re) does.
+  return scripts.length === 1 ? scripts[0] : undefined;
+}
+
+// line is 1-base (first line is line 1), patch is literal code to insert
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.dyninst.unpatch" id="apidoc.element.strong-agent.dyninst.unpatch">
+        function <span class="apidocSignatureSpan">strong-agent.dyninst.</span>unpatch
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unpatch(f) {
+  if (typeof(f) === &#x27;function&#x27;) {
+    return Functions.unpatch.apply(this, arguments);
+  } else {
+    return Scripts.unpatch.apply(this, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      if (config.prolog) {
+        changes[2] -= config.prolog.length;
+        changes[2] -= config.epilog.length;
+      } else {
+        changes[0] -= config.epilog.length;
+      }
+    }
+    return Scripts.<span class="apidocCodeKeywordSpan">unpatch</span>(script, changes);
+  });
+};
+
+// Find function f, and patch config.prolog and config.epilog into its body
+// prolog goes right after the opening brace, and epilog right before the
+// closing brace.
+Functions.commit = function(f, config, commit) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.dyninst_metrics" id="apidoc.module.strong-agent.dyninst_metrics">module strong-agent.dyninst_metrics</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.dyninst_metrics.init" id="apidoc.element.strong-agent.dyninst_metrics.init">
+        function <span class="apidocSignatureSpan">strong-agent.dyninst_metrics.</span>init
+        <span class="apidocSignatureSpan">(agent, dyninst)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function init(agent, dyninst) {
+  exports.findScript = findScript;
+  exports.patchLine = patchLine;
+  exports.patch = patch;
+
+  // name is a regex string long enough to uniquely match a script name.
+  //
+  // Script names are fully qualified when loaded using node require,
+  // and short when builtin to node (&#x27;util.js&#x27;).
+  //
+  // Return is a debug script object if a unique match was found, null
+  // otherwise.
+  function findScript(name) {
+    var re = RegExp(name);
+    var scripts = dyninst.scripts().filter(function(script) {
+      return re.test(script.name);
+    });
+    // Mirrors what V8&#x27;s Debug.findScript(re) does.
+    return scripts.length === 1 ? scripts[0] : undefined;
+  }
+
+  // line is 1-base (first line is line 1), patch is literal code to insert
+  // at beginning of line
+  function patchLine(name, line, patch) {
+    var script = findScript(name);
+
+    if (!script) throw Error(&#x27;noscript&#x27;);
+
+    var position = dyninst.debug().findScriptSourcePosition(script, line - 1);
+
+    if (position == null) throw Error(&#x27;noline&#x27;);
+
+    debug(&#x27;patch script %s line %d pos %d: %j&#x27;, script.name, line, position,
+          patch);
+    var changes = [position, patch];
+
+    return dyninst.patch(script, changes);
+  }
+
+  // patchset looks like:
+  //
+  //   {
+  //     NAME: [ PATCH, ...],
+  //     ...
+  //   }
+  //
+  // NAME is a regular expression matching filename to patch
+  //
+  // PATCH looks like:
+  //   {
+  //     type: TYPE,
+  //     line: LINE,
+  //     [metric: METRIC]
+  //     [code: CODE,]
+  //     [context: CTX,]
+  //   }
+  //
+  // For type:
+  // - code: code is literal code to insert
+  // - increment, decrement, timer-start, timer-stop:
+  //   - metric is dot-separated metric name
+  //
+  // XXX(sam) I could separate format checking from application of patch, to
+  // allow client to report verbose format errors without round-trip through
+  // supervisor/agent.
+  function patch(patchset) {
+    var name;
+    var patch;
+
+    try {
+      for (name in patchset) {
+        var patches = patchset[name];
+        patches.forEach(function(_) {
+          patch = _;
+          debug(&#x27;patching %s: %j&#x27;, name, patch);
+          assert(patch.type, &#x27;patch for &#x27; + name + &#x27; has no type&#x27;);
+          assert(patch.line, &#x27;patch for &#x27; + name + &#x27; has no line&#x27;);
+          switch (patch.type) {
+            case &#x27;code&#x27;:
+              assert(patch.code, &#x27;nocode&#x27;);
+              patchLine(name, patch.line, patch.code);
+              break;
+
+            case &#x27;increment&#x27;:
+            case &#x27;decrement&#x27;:
+              patchLine(name, patch.line, incdec(patch.type, patch.metric));
+              break;
+
+            case &#x27;timer-start&#x27;:
+              patchLine(name, patch.line,
+                        timerStart(patch.metric, patch.context));
+              break;
+
+            case &#x27;timer-stop&#x27;:
+              patchLine(name, patch.line, timerStop(patch.context));
+              break;
+
+            default:
+              throw Error(&#x27;unsupported patch type: &#x27; + patch.type);
+              break;
+          }
+        });
+      }
+    } catch (er) {
+      patch.file = name;
+      debug(&#x27;patch failed: %s %j&#x27;, er.message, patch);
+      // &#x27;illegal access&#x27; exceptions are simple strings, not Error objects.
+      return {error: er.message || er, patch: patch};
+    }
+  }
+
+  function checkStatFormat(stat) {
+    if (stat == null) {
+      throw Error(&#x27;stat is missing&#x27;);
+    }
+    if (typeof stat !== &#x27;string&#x27;) {
+      throw Error(&#x27;stat is not a string&#x27;);
+    }
+    if (!/^\w+(?:\.\w+)*$/.test(stat)) {
+      throw Error(&#x27;stat is not dot-separated words&#x27;);
+    }
+    return stat;
+  }
+
+  function checkContext(ctx) {
+    if (ctx == null) {
+      throw Error(&#x27;context is missing&#x27;);
+    }
+    if (typeof ctx !== &#x27;string&#x27;) {
+      throw Error(&#x27;context is not a string&#x27;);
+    }
+    // XXX(sam) not so clear what else we can check, validity as an assignment
+    // LHS depends on location of insertion
+    return ctx;
+  }
+
+  function incdec(call, stat) {
+    checkStatFormat(stat);
+    return util.format(&#x27;global.STRONGAGENT.metrics.stats.%s(\&#x27;%s\&#x27;);&#x27;, call,
+                       stat);
+  }
+
+  // X ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.notice(&#x27;native addon missing, install a compiler&#x27;);
+}
+
+this.notice(&#x27;v%s profiling app \&#x27;%s\&#x27; pid \&#x27;%d\&#x27;&#x27;, agentPackage.version,
+            config.appName, process.pid);
+
+assert(config.baseInterval, &#x27;config is missing defaults&#x27;);
+proxy.<span class="apidocCodeKeywordSpan">init</span>(this);
+cpuProf.init(this);
+info.init(this);
+this.dyninst.metrics = dyninstMetrics.init(this, dyninst);
+
+this.prepareProbes();
+this.prepareProfilers();
+this.prepareClusterControls();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.graph_helper" id="apidoc.module.strong-agent.graph_helper">module strong-agent.graph_helper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.graph_helper.startNode" id="apidoc.element.strong-agent.graph_helper.startNode">
+        function <span class="apidocSignatureSpan">strong-agent.graph_helper.</span>startNode
+        <span class="apidocSignatureSpan">(name, q, agent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function startNode(name, q, agent) {
+  if (agent.graph == undefined) return;
+
+  var nodeId = agent.graph.nodes.length;
+  var node = {name: name, q: q, start: Date.now(), value: 1};
+  agent.graph.nodes.push(node);
+
+  var link = {source: agent.currentNode, target: nodeId, value: 1};
+  agent.graph.links.push(link);
+
+  var prevNode = agent.currentNode;
+  agent.currentNode = nodeId;
+
+  return {node: node, link: link, prevNode: prevNode};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.graph_helper.updateTimes" id="apidoc.element.strong-agent.graph_helper.updateTimes">
+        function <span class="apidocSignatureSpan">strong-agent.graph_helper.</span>updateTimes
+        <span class="apidocSignatureSpan">(graphNode, time)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function updateTimes(graphNode, time) {
+  if (graphNode == undefined) return;
+  graphNode.node.value = time.ms || 1;
+  graphNode.link.value = time.ms || 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.info" id="apidoc.module.strong-agent.info">module strong-agent.info</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.info.init" id="apidoc.element.strong-agent.info.init">
+        function <span class="apidocSignatureSpan">strong-agent.info.</span>init
+        <span class="apidocSignatureSpan">(agent_)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (agent_) {
+  agent = agent_;
+
+  if (!addon) {
+    return;
+  }
+
+  addon[addon.kGarbageCollectorStatisticsCallback] = function(samples) {
+    for (var i = 0, n = samples.length; i &#x3c; n; i += 1) {
+      var len = gcstats.push(samples[i]);
+      var total = gcstats.reduce(function(a, b) { return a + b });
+      var baseline = total / len / 1e6;
+      agent.metric(&#x27;GC Full. V8 heap used&#x27;, baseline);
+      collectHeap(baseline);
+      if (len &#x3e; 10) {
+        gcstats.shift();  // Sliding window.
+      }
+    }
+  };
+  addon.startGarbageCollectorStatistics();
+
+  timebase = Date.now();
+  collect();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.notice(&#x27;native addon missing, install a compiler&#x27;);
+}
+
+this.notice(&#x27;v%s profiling app \&#x27;%s\&#x27; pid \&#x27;%d\&#x27;&#x27;, agentPackage.version,
+            config.appName, process.pid);
+
+assert(config.baseInterval, &#x27;config is missing defaults&#x27;);
+proxy.<span class="apidocCodeKeywordSpan">init</span>(this);
+cpuProf.init(this);
+info.init(this);
+this.dyninst.metrics = dyninstMetrics.init(this, dyninst);
+
+this.prepareProbes();
+this.prepareProfilers();
+this.prepareClusterControls();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.info.poll" id="apidoc.element.strong-agent.info.poll">
+        function <span class="apidocSignatureSpan">strong-agent.info.</span>poll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">poll = function () {
+  collect();
+  connectionInfo();
+  collectHeap();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Agent.prototype.poll = function() {
+var data;
+
+this.emit(&#x27;poll::start&#x27;);
+
+if (data = counts.<span class="apidocCodeKeywordSpan">poll</span>()) {
+  this.internal.emit(&#x27;counts&#x27;, data);
+}
+
+if (data = loop.poll()) {
+  this.internal.emit(&#x27;loop&#x27;, data);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.internal" id="apidoc.module.strong-agent.internal">module strong-agent.internal</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.internal.lrtime" id="apidoc.element.strong-agent.internal.lrtime">
+        function <span class="apidocSignatureSpan">strong-agent.internal.</span>lrtime
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lrtime = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.json" id="apidoc.module.strong-agent.json">module strong-agent.json</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.json.JsonDecoder" id="apidoc.element.strong-agent.json.JsonDecoder">
+        function <span class="apidocSignatureSpan">strong-agent.json.</span>JsonDecoder
+        <span class="apidocSignatureSpan">(maxlen)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JsonDecoder(maxlen) {
+  if (!(this instanceof JsonDecoder)) return new JsonDecoder(maxlen);
+  this.constructor.call(this, {objectMode: true});
+  this.buffer_ = &#x27;&#x27;;
+  this.index_ = 0;
+  this.maxlen_ = (maxlen | 0) || -1;
+  this.slice_ = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// so that e.g. 0.6317000000000004 becomes 0.6317.
+function fix(value) { return +(+value).toFixed(5); }
+
+return this;
+};
+
+Agent.prototype.dyninst = function(stream) {
+var decoder = stream.pipe(json.<span class="apidocCodeKeywordSpan">JsonDecoder</span>());
+decoder.on(&#x27;data&#x27;, ondata);
+var encoder = json.JsonEncoder();
+encoder.pipe(stream);
+function ondata(cmd) { dyninst.driver().submit(cmd, onresult); }
+function onresult(err, result) {
+  if (err) {
+    result = {error: err.message, stack: err.stack};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.json.JsonEncoder" id="apidoc.element.strong-agent.json.JsonEncoder">
+        function <span class="apidocSignatureSpan">strong-agent.json.</span>JsonEncoder
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JsonEncoder() {
+  if (!(this instanceof JsonEncoder)) return new JsonEncoder;
+  this.constructor.call(this, {objectMode: true});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return this;
+};
+
+Agent.prototype.dyninst = function(stream) {
+var decoder = stream.pipe(json.JsonDecoder());
+decoder.on(&#x27;data&#x27;, ondata);
+var encoder = json.<span class="apidocCodeKeywordSpan">JsonEncoder</span>();
+encoder.pipe(stream);
+function ondata(cmd) { dyninst.driver().submit(cmd, onresult); }
+function onresult(err, result) {
+  if (err) {
+    result = {error: err.message, stack: err.stack};
+  }
+  if (result) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.loop" id="apidoc.module.strong-agent.loop">module strong-agent.loop</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.loop.poll" id="apidoc.element.strong-agent.loop.poll">
+        function <span class="apidocSignatureSpan">strong-agent.loop.</span>poll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">poll = function () {
+  if (!addon) {
+    return;
+  }
+  var statistics = addon.eventLoopStatistics;
+  var min = statistics[0];  // Can be UINT32_MAX but only when num === 0.
+  var max = statistics[1];
+  var num = statistics[2];
+  var sum = statistics[3];
+
+  statistics[0] = -1;  // Wraps around to UINT32_MAX.
+  statistics[1] = 0;
+  statistics[2] = 0;
+  statistics[3] = 0;
+
+  if (num === 0) {
+    return null;
+  }
+
+  // XXX(bnoordhuis) Backwards compatible field names.
+  // XXX(bnoordhuis) fastest_ms is new though.
+  return {count: num, fastest_ms: min, slowest_ms: max, sum_ms: sum};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Agent.prototype.poll = function() {
+var data;
+
+this.emit(&#x27;poll::start&#x27;);
+
+if (data = counts.<span class="apidocCodeKeywordSpan">poll</span>()) {
+  this.internal.emit(&#x27;counts&#x27;, data);
+}
+
+if (data = loop.poll()) {
+  this.internal.emit(&#x27;loop&#x27;, data);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.metrics" id="apidoc.module.strong-agent.metrics">module strong-agent.metrics</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.metrics.add" id="apidoc.element.strong-agent.metrics.add">
+        function <span class="apidocSignatureSpan">strong-agent.metrics.</span>add
+        <span class="apidocSignatureSpan">(name, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (name, value) {
+  if (metrics == null) {
+    // Users can add their own metrics; we need a prototype-less dictionary
+    // to store them or a metric like &#x27;__proto__&#x27; would cause issues.
+    metrics = Object.create(null);
+  }
+  metrics[name] = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (!control || !clusterInfo.isMaster) return;
+  control.terminate(id);
+}
+};
+
+Agent.prototype.metric = function(name, value) {
+if (!this.started) return;
+metrics.<span class="apidocCodeKeywordSpan">add</span>(name, value);
+};
+
+// Generic debug logging
+Agent.prototype.debug = debug;
+
+Agent.prototype.info = function() {
+this.config.logger.info(&#x27;strong-agent[%d]&#x27;, process.pid,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.metrics.poll" id="apidoc.element.strong-agent.metrics.poll">
+        function <span class="apidocSignatureSpan">strong-agent.metrics.</span>poll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">poll = function () {
+  var snapshot = metrics;
+  metrics = null;
+  return snapshot;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Agent.prototype.poll = function() {
+var data;
+
+this.emit(&#x27;poll::start&#x27;);
+
+if (data = counts.<span class="apidocCodeKeywordSpan">poll</span>()) {
+  this.internal.emit(&#x27;counts&#x27;, data);
+}
+
+if (data = loop.poll()) {
+  this.internal.emit(&#x27;loop&#x27;, data);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.module_detector" id="apidoc.module.strong-agent.module_detector">module strong-agent.module_detector</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.module_detector.detectModule" id="apidoc.element.strong-agent.module_detector.detectModule">
+        function <span class="apidocSignatureSpan">strong-agent.module_detector.</span>detectModule
+        <span class="apidocSignatureSpan">(modulename, hasRun)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function detectModule(modulename, hasRun) {
+  var location;
+
+  try {
+    location = require.resolve(modulename);
+  } catch (err) {
+  }
+
+  if (location) {
+    location = path.dirname(location);
+    var version = require(path.resolve(location, &#x27;package.json&#x27;)).version;
+    return version;
+  } else if (!hasRun) {
+    return detectModule(path.resolve(process.cwd(), &#x27;node_modules&#x27;, modulename),
+                        true);
+  }
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      &#x27;Application name not found, StrongOps dashboard reporting disabled.&#x27;);
+  return;
+}
+
+this.notice(&#x27;dashboard is at https://strongops.strongloop.com&#x27;);
+
+var loopbackPath = &#x27;loopback&#x27;;
+var loopbackVersion = moduleDetector.<span class="apidocCodeKeywordSpan">detectModule</span>(loopbackPath);
+var version = agentPackage.version;
+
+if (!addon) {
+  version += &#x27; (no-addon)&#x27;;
+}
+
+this.start();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.proc" id="apidoc.module.strong-agent.proc">module strong-agent.proc</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.proc.stat" id="apidoc.element.strong-agent.proc.stat">
+        function <span class="apidocSignatureSpan">strong-agent.proc.</span>stat
+        <span class="apidocSignatureSpan">(pid, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stat(pid, callback) {
+
+  fs.readFile(&#x27;/proc/&#x27; + pid + &#x27;/stat&#x27;, &#x27;ascii&#x27;, function(err, data) {
+    if (err) {
+      return callback(err, null);
+    }
+
+    var stats_pid = data.split(&#x27; &#x27;);
+    var ret = {};
+
+    ret.utime = parseInt(stats_pid[13]);
+    ret.stime = parseInt(stats_pid[14]);
+    ret.ptime = ret.utime + ret.stime;
+
+    fs.readFile(&#x27;/proc/stat&#x27;, &#x27;ascii&#x27;, function(err, data) {
+      if (err) return;
+
+      ret.all = data.match(&#x27;cpu +(.*)\n&#x27;)[1].split(&#x27; &#x27;);
+      ret.all = array_sum(ret.all);
+
+      callback(null, ret);
+    })
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.proc.usage" id="apidoc.element.strong-agent.proc.usage">
+        function <span class="apidocSignatureSpan">strong-agent.proc.</span>usage
+        <span class="apidocSignatureSpan">(pid, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function usage(pid, callback) {
+
+  fs.readFile(&#x27;/proc/&#x27; + pid + &#x27;/usage&#x27;, function(err, buf) {
+    if (err) {
+      return callback(err, null);
+    };
+
+    var data = {};
+    var offset = 0;
+
+    // lwp id.  0: process or defunct
+    data.lwpid = buf.readUInt32LE(offset);
+    offset += 4;
+
+    // number of contributing lwps
+    data.count = buf.readUInt32LE(offset);
+    offset += 4;
+
+    // current time stamp
+    data.tstamp = readTimespec(buf, offset);
+    offset += sizeof_timespec;
+
+    // process/lwp creation time stamp
+    data.create = readTimespec(buf, offset);
+    offset += sizeof_timespec;
+
+    // process/lwp termination time stamp
+    data.term = readTimespec(buf, offset);
+    offset += sizeof_timespec;
+
+    // total lwp real (elapsed) time
+    data.rtime = readTimespec(buf, offset);
+    offset += sizeof_timespec;
+
+    // user level cpu time
+    data.utime = readTimespec(buf, offset);
+    offset += sizeof_timespec;
+
+    // system call cpu time
+    data.stime = readTimespec(buf, offset);
+    offset += sizeof_timespec;
+
+    // there&#x27;s normally another big pile of values we could read, but
+    // don&#x27;t need any of them
+
+    callback(null, data);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.proxy" id="apidoc.module.strong-agent.proxy">module strong-agent.proxy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.proxy.after" id="apidoc.element.strong-agent.proxy.after">
+        function <span class="apidocSignatureSpan">strong-agent.proxy.</span>after
+        <span class="apidocSignatureSpan">(object, method, hook)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function after(object, method, hook) { around(object, method, null, hook); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.proxy.around" id="apidoc.element.strong-agent.proxy.around">
+        function <span class="apidocSignatureSpan">strong-agent.proxy.</span>around
+        <span class="apidocSignatureSpan">(object, method, before, after)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function around(object, method, before, after) {
+  if (method instanceof Array) {
+    method.forEach(function(method) { around(object, method, before, after) });
+    return;
+  }
+  var all = descriptors(object, function(_, des) {
+    return des.configurable === true &#x26;&#x26; &#x27;function&#x27; === typeof(des.value);
+  });
+  var des = all[method];
+  if (des == null) {
+    return;  // No such property.
+  }
+  var target = des.value;
+  if (target == null) {
+    return;  // Getter or setter, don&#x27;t touch.
+  }
+  if (isproxy(target)) {
+    var proxy = target;  // Already patched.
+  } else {
+    // Reuse a proxy if one already exists, else create a new one.
+    var des = first(all, function(_, des) {
+      return des &#x26;&#x26; des.value &#x26;&#x26; des.value[kContextPropertyName] &#x26;&#x26;
+             des.value[kContextPropertyName].target === target;
+    });
+    var proxy = des ? des.value : wrap(target);
+  }
+  var context = proxy[kContextPropertyName];
+  if (before &#x26;&#x26; context.before.indexOf(before) === -1) {
+    context.before.push(before);
+  }
+  if (after &#x26;&#x26; context.after.indexOf(after) === -1) {
+    context.after.push(after);
+  }
+  context.forward = recompile(context);
+  each(all, function(method, des) {
+    // This check filters out getters and that&#x27;s intentional: a getter may have
+    // observable side effects and its return value need not be constant over
+    // time.  It&#x27;s essentially a black box that can&#x27;t be inspected.
+    if (des &#x26;&#x26; des.value === target) install(object, method, des, proxy);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.proxy.before" id="apidoc.element.strong-agent.proxy.before">
+        function <span class="apidocSignatureSpan">strong-agent.proxy.</span>before
+        <span class="apidocSignatureSpan">(object, method, hook)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function before(object, method, hook) { around(object, method, hook); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.proxy.callback" id="apidoc.element.strong-agent.proxy.callback">
+        function <span class="apidocSignatureSpan">strong-agent.proxy.</span>callback
+        <span class="apidocSignatureSpan">(args, index, before, after)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function callback(args, index, before, after) {
+  if (index === -1) {
+    index = args.length;
+    while (--index &#x3e;= 0 &#x26;&#x26; typeof(args[index]) !== &#x27;function&#x27;)
+      ;
+    if (index === -1) return;
+  }
+  var target = args[index];
+  var proxy = oncall(target, before, after);
+  args[index] = proxy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.proxy.getter" id="apidoc.element.strong-agent.proxy.getter">
+        function <span class="apidocSignatureSpan">strong-agent.proxy.</span>getter
+        <span class="apidocSignatureSpan">(object, method, hook)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getter(object, method, hook) {
+  if (method instanceof Array) {
+    method.forEach(function(method) { getter(object, method, hook) });
+    return;
+  }
+  var des = descriptor(object, method);
+  if (des == null) {
+    return;
+  }
+  if (des.get == null) {
+    return;  // Not a getter.
+  }
+  if (des.configurable === false) {
+    return;  // Immutable property.
+  }
+  if (isproxy(des.get)) {
+    var proxy = des.get;
+  } else {
+    var target = des.get;
+    var proxy = wrap(target);
+    var getters = descriptors(object, function(_, des) {
+      return des &#x26;&#x26; des.get &#x26;&#x26; des.get === target &#x26;&#x26; des.configurable === true;
+    });
+    each(getters, function(method, des) {
+      Object.defineProperty(object, method, {
+        configurable: true,
+        enumerable: des.enumerable,
+        get: proxy,
+      });
+    });
+  }
+  var context = proxy[kContextPropertyName];
+  if (context.after.indexOf(hook) === -1) {
+    context.after.push(hook);
+  }
+  context.forward = recompile(context);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.proxy.init" id="apidoc.element.strong-agent.proxy.init">
+        function <span class="apidocSignatureSpan">strong-agent.proxy.</span>init
+        <span class="apidocSignatureSpan">(agent_)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function init(agent_) { agent = agent_; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.notice(&#x27;native addon missing, install a compiler&#x27;);
+}
+
+this.notice(&#x27;v%s profiling app \&#x27;%s\&#x27; pid \&#x27;%d\&#x27;&#x27;, agentPackage.version,
+            config.appName, process.pid);
+
+assert(config.baseInterval, &#x27;config is missing defaults&#x27;);
+proxy.<span class="apidocCodeKeywordSpan">init</span>(this);
+cpuProf.init(this);
+info.init(this);
+this.dyninst.metrics = dyninstMetrics.init(this, dyninst);
+
+this.prepareProbes();
+this.prepareProfilers();
+this.prepareClusterControls();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.proxy.install" id="apidoc.element.strong-agent.proxy.install">
+        function <span class="apidocSignatureSpan">strong-agent.proxy.</span>install
+        <span class="apidocSignatureSpan">(object, method, des, proxy)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function install(object, method, des, proxy) {
+  if (des.configurable === false) {
+    return;
+  }
+  var newdes = {
+    configurable: true,
+    enumerable: des.enumerable,
+    writable: des.writable,
+    value: proxy,
+  };
+  Object.defineProperty(object, method, newdes);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.proxy.oncall" id="apidoc.element.strong-agent.proxy.oncall">
+        function <span class="apidocSignatureSpan">strong-agent.proxy.</span>oncall
+        <span class="apidocSignatureSpan">(target, before, after)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function oncall(target, before, after) {
+  var extra = agent.extra;
+  var graph = agent.graph;
+  var currentNode = agent.currentNode;
+  var proxy = wrap(target, function(recv, args) {
+    // TODO(bnoordhuis) Get rid of these globals.
+    if (extra) agent.extra = extra;
+    if (graph) agent.graph = graph;
+    if (currentNode) agent.currentNode = currentNode;
+    if (before) before(recv, args, extra, graph, currentNode);
+    var rval = target.apply(recv, args);
+    if (after) after(recv, args, extra, graph, currentNode);
+    // TODO(bnoordhuis) Get rid of these globals.
+    if (currentNode) agent.currentNode = undefined;
+    if (graph) agent.graph = undefined;
+    if (extra) agent.extra = undefined;
+    return rval;
+  });
+  return proxy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.proxy.wrap" id="apidoc.element.strong-agent.proxy.wrap">
+        function <span class="apidocSignatureSpan">strong-agent.proxy.</span>wrap
+        <span class="apidocSignatureSpan">(target, forward)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrap(target, forward) {
+  if (isproxy(target)) {
+    return target;
+  }
+  var context = {
+    forward: forward,
+    target: target,
+    before: [],
+    after: [],
+  };
+  if (context.forward == null) {
+    context.forward = recompile(context);
+  }
+  // Generate a function with the same function name as the target.
+  var name = target.name;
+  if (name.length &#x3e; 5 &#x26;&#x26; name[5] === &#x27; &#x27;) {
+    name = name.slice(6);  // Slice off &#x27;bound &#x27; from &#x27;bound foo&#x27;.
+  } else if (name.length &#x3e; 3 &#x26;&#x26; name[3] === &#x27; &#x27;) {
+    name = name.slice(4);  // Slice off &#x27;get &#x27; from &#x27;get foo&#x27;.
+  }
+  var source = &#x27; (function(context) {                          \n&#x27; +
+               &#x27;   return function &#x27; + name + &#x27;() {            \n&#x27; +
+               &#x27;     return context.forward(this, arguments);  \n&#x27; +
+               &#x27;   };                                          \n&#x27; +
+               &#x27; });                                           \n&#x27;;
+  var proxy = eval(source)(context);
+  Object.defineProperty(proxy, kContextPropertyName, {value: context});
+  // Make stringification yield the source of the target function.
+  Object.defineProperty(proxy, &#x27;toString&#x27;, {
+    configurable: true,
+    enumerable: false,
+    writable: true,
+    value: function() { return &#x27;&#x27; + proxy[kContextPropertyName].target },
+  });
+  // Copy method annotations from the target (http, shared etc.)
+  Object.getOwnPropertyNames(target).forEach(function(k) {
+    var des = Object.getOwnPropertyDescriptor(target, k);
+    if (des.configurable) {
+      Object.defineProperty(proxy, k, des);
+    }
+  });
+  return proxy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.require" id="apidoc.module.strong-agent.require">module strong-agent.require</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.require.require" id="apidoc.element.strong-agent.require.require">
+        function <span class="apidocSignatureSpan">strong-agent.</span>require
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function require(path) {
+  try {
+    exports.requireDepth += 1;
+    return self.require(path);
+  } finally {
+    exports.requireDepth -= 1;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// (i.e. referenced) variables from enclosing scopes.  Variables from outer
+// scopes that are not referenced in the original function are not visible
+// to instrumentation; trying to inject code that references them will fail.
+var instrumentation = (function() {
+(function(agent, req, res) {
+  var socket = global.__DYNINST_SOCKET;
+  if (socket == null) {
+    socket = agent.<span class="apidocCodeKeywordSpan">require</span>(&#x27;dgram&#x27;).createSocket(&#x27;udp4&#x27;);
+    socket.unref();
+    Object.defineProperty(global, &#x27;__DYNINST_SOCKET&#x27;, { value: socket });
+  }
+  /* Keep references to the metrics we want to capture, they may have changed
+   * or gone away by the time we send off the datagram. */
+  var host = req.socket.remoteAddress;
+  var port = req.socket.remotePort;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.require.resolve" id="apidoc.element.strong-agent.require.resolve">
+        function <span class="apidocSignatureSpan">strong-agent.require.</span>resolve
+        <span class="apidocSignatureSpan">(request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolve(request) {
+  return Module._resolveFilename(request, self);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var path = require(&#x27;path&#x27;);
+
+module.exports.detectModule = detectModule;
+function detectModule(modulename, hasRun) {
+var location;
+
+try {
+  location = require.<span class="apidocCodeKeywordSpan">resolve</span>(modulename);
+} catch (err) {
+}
+
+if (location) {
+  location = path.dirname(location);
+  var version = require(path.resolve(location, &#x27;package.json&#x27;)).version;
+  return version;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.require.extensions" id="apidoc.module.strong-agent.require.extensions">module strong-agent.require.extensions</a></h1>
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.samples" id="apidoc.module.strong-agent.samples">module strong-agent.samples</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.samples.timer" id="apidoc.element.strong-agent.samples.timer">
+        function <span class="apidocSignatureSpan">strong-agent.samples.</span>timer
+        <span class="apidocSignatureSpan">(scope, command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">timer = function (scope, command) {
+  var t = new Timer(scope, command);
+  t.start();
+  return t;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.timer" id="apidoc.module.strong-agent.timer">module strong-agent.timer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.timer.timer" id="apidoc.element.strong-agent.timer.timer">
+        function <span class="apidocSignatureSpan">strong-agent.</span>timer
+        <span class="apidocSignatureSpan">(scope, command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Timer(scope, command) {
+  this.scope = scope;
+  this.command = command;
+  this._start = undefined;
+  this.ms = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.strong-agent.timer.prototype" id="apidoc.module.strong-agent.timer.prototype">module strong-agent.timer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.timer.prototype.end" id="apidoc.element.strong-agent.timer.prototype.end">
+        function <span class="apidocSignatureSpan">strong-agent.timer.prototype.</span>end
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function () {
+  var t = hrtime(this._start);
+  this.ms = t[0] * 1000 + t[1] / 1e6;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// save as `dyninst-metrics-example.js`
+var http = require(&#x27;http&#x27;);
+
+http.createServer(request).listen(process.env.PORT || 3000);
+
+function request(req, res) {
+  setTimeout(function() { // line 7
+    res.<span class="apidocCodeKeywordSpan">end</span>(&#x27;OK\n&#x27;); // line 8
+  }, Math.random() &#x3e; 0.1 ? 10 : 100);
+}
+```
+
+The above can be patched to keep a count of concurrent requests and a timer for
+each request by passing the following `patch.json` to `slc runctl patch`:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.strong-agent.timer.prototype.start" id="apidoc.element.strong-agent.timer.prototype.start">
+        function <span class="apidocSignatureSpan">strong-agent.timer.prototype.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function () { this._start = hrtime(); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var loopbackVersion = moduleDetector.detectModule(loopbackPath);
+var version = agentPackage.version;
+
+if (!addon) {
+  version += &#x27; (no-addon)&#x27;;
+}
+
+this.<span class="apidocCodeKeywordSpan">start</span>();
+
+return this;
+};
+
+Agent.prototype.configure = function(options) {
+options = options || {};
+var apiKey = options.apiKey;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
